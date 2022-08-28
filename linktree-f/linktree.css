@@ -1,0 +1,325 @@
+@font-face {
+    font-family: "cmp";
+    src: url("cmp.ttf");
+    /* thx to 'Chequered ink' for the font <Smack Laideth Down 2019> */
+}
+
+body {
+    background-color: white;
+    color: #2b2f33;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* article */
+header {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    border: 2px solid #2b2f33;
+}
+
+/* nav */
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.b {
+    text-decoration: none;
+    color: #2b2f33;
+    margin: 10px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+button {
+    height: 100px;
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(15.9px);
+    -webkit-backdrop-filter: blur(15.9px);
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    -webkit-backdrop-filter: blur(15.9px);
+
+    border: 3px solid;
+    border-radius: 50px;
+}
+
+.cont {
+    font-size: 2.5em;
+}
+
+.sec {
+    height: 50px;
+    width: 240px;
+    font-size: 0.6em;
+    font-style: italic;
+}
+
+#icons-white {
+    display: none;
+}
+
+#icons-black {
+    display: inline !important;
+}
+
+.ico {
+    width: 40px;
+    padding: 5px;
+}
+
+[web] {
+    border-color: #b3d3f3;
+
+}
+
+[chessmania] {
+    border-color: darkred;
+    font-family: cmp;
+}
+
+[mail] {
+    border-color: #2b2f33;
+}
+
+.space {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+hr {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: #2b2f33;
+    border-color: #2b2f33;
+    margin: 4px;
+}
+
+.firma-b {
+    display: none !important;
+}
+
+.firma-n {
+    width: 100px;
+    padding: 10px;
+    display: inline !important;
+}
+
+/*      ------------------dark_mode------------------      */
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: #2b2f33;
+        color: white;
+    }
+
+    .cont {
+        color: #ffffff;
+    }
+
+    #icons-white {
+        display: inline !important;
+    }
+    #icons-black {
+        display: none !important;
+    }
+    .firma-n {
+        display: none !important;
+    }
+
+    .firma-b {
+        width: 100px;
+        padding: 10px;
+        display: inline !important;
+    }
+
+    hr{
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+    [mail]{
+        border-color: #ffffff;
+    }
+
+}
+
+/*      ------------------mobile_mode------------------      */
+
+@media only screen and (max-width: 1440px) and (orientation:portrait) {
+    .avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+
+
+}
+
+/*      ------------------animazioni------------------      */
+
+a.b {
+    opacity: 0;
+    animation-name: entrata;
+    animation-duration: 3s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+#b2 {
+    animation-delay: 0.5s;
+}
+#b3 {
+    animation-delay: 1s;
+}
+#b4 {
+    animation-delay: 1.5s;
+}
+#b5 {
+    animation-delay: 2s;
+}
+
+button:hover {
+    animation-name: hover;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.i {
+    opacity: 0;
+    animation-name: sobbalzo;
+    animation-delay: 4s;
+    animation-duration: 4.5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes sobbalzo {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    50% {
+        opacity: 50%;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes entrata {
+    from {
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes hover {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.ico:hover {
+    animation-name: rev-hover;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rev-hover {
+    from {
+        transform: translateY(0%);
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        transform: scale(0.85);
+    }
+}
+
+hr {
+    opacity: 0;
+    animation-name: scivolata-dx;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+#hr2 {
+    animation-delay: 4.25s;
+}
+
+#hr3 {
+    animation-delay: 4.5s;
+}
+@keyframes scivolata-dx {
+    from {
+        opacity: 1;
+        transform: translateX(-100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+hr.sx {
+    opacity: 0;
+    animation-name: scivolata-sx;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scivolata-sx {
+    from {
+        opacity: 1;
+        transform: translateX(100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
