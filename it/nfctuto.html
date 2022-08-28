@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="NFC e Domotica: come avvio le routine di alexa tramite i tag NFC e rendo domotica la mia postazione">
+        <title>NFC e Domotica | CuSO's Place</title>
+        <link rel="shortcut icon" href="/@/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="0-Template-f/Template.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="/@/favicon.png" align="left" width="100px" alt="this is my logo :)">
+            <h1>
+                <a href="/index.html" alt="redirect to homepage">
+                    CuSO's Place
+                </a>
+            </h1>
+            <h2>
+                My ideas and something else
+            </h2>
+        </header>
+        <br>
+        <hr>
+        <br>
+        <div class="title">
+            <h3 class="title">
+                NFC e Domotica
+            </h3>
+            <h3 class="subtitle">
+                - CoSe a CaSO di CuSO -
+            </h3>
+            <div class="info">
+                <h4>
+                    <em>29/05/2022</em>
+                </h4>
+            
+                <h4>
+                    10min
+                </h4>
+            
+                <h4 class="cat">
+                    <a  href="drawer.html#MODERN_TECH">
+                        <em>Modern tech</em>
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <hr>
+        <br><br>
+
+        <article>
+            <h4>Intro</h4>
+            <p>
+                Buon giorno fiorellini, oggi vi racconto come ho domotizatto camera mia ed impostato dei preset con le routine di alexa.
+                <br>
+                Molti starano già pensando: "dai sarà una stupidata, avrà aperto l'app alexa ed attivato le routine vocali"... se fosse stato solo questo non ve ne parlerei di certo; come al solito, ho fatto le cose nella maniera più complessa possibile :)
+            </p>
+            <br>
+            <h4>Materiale utilizzato</h4>
+            <p>
+                Per provare a ricreare questo mio sistea di automazioni non vi serviranno chissà quali conoscenze informatiche, giusto qualche couccia semplice semplice:
+                <ul>
+                    <li>Account Amazon</li>
+                    <li>Dispositivi domotici compatibili con il sistema Amazon Echo</li>
+                    <li>Tessere o adesivi NFC (uno per ogni preset che volete impostare)</li>
+                    <li>Un telefono con lettore NFC </li>
+                    <li>Una connessione ad internet</li>
+                    <li>Qualche minuto per leggere questo tutorial</li>
+                </ul>
+            </p>
+            <br>
+            <h4>Il concetto iniziale</h4>
+            <p>
+                Mentre progettavo la scrivania decisi di inserire un dettaglio in stile "laboratorio fantascentifico", sapete quelli pieni di devices e che cambiano tutto premendo un tasto? Beh in camera mia volevo la stessa cosa.
+                <br>
+                Il focus principale di questo sistema era far sì che camera mia potesse cambiare completamente in pochi secondi.
+                <br>
+                Ecco dunque l'idea di utilizzare gli NFC, semplici circuiti che una volta attivati possono far eseguire ai nostri telefoni svariate azioni, come vi mostrerò più tardi.
+                <br>
+                Come già detto, tutto questo potrebbe funzionare anche sol ocon i comandi vocali di alexa, ma adoro strafare. 
+            </p>
+            <br>
+            <h4>Analizziamo il progetto</h4>
+            <p>
+                Sulla scrivania ho 3 devices che possono essere accesi o spenti con alexa: i 2 computer (non conto il raspi perchè quello è sempre acceso) e la xbox. 
+                <br>
+                Per quanto riguarda le luci, ho un basico pannello led rgb, ovviamente, alexa riendly. 
+                <br>
+                Per ora sembra tutto molto basico, 3 smart devices con una luce da attivare in vari modi, non sarà difficile.
+                <br>
+                La parte divertente sarà utilizzare dei "bottoni fisici" per attivare le routine.
+            </p>            
+            <br>
+            <h4>Creiamo le routine</h4>
+            <p>
+                Fingiamo di voler accendere tutto ed impostare le luci sul viola, apriamo l'app alexa ed andiamo sulle skill. Di base i compute rnon sono attivabili con alexa, sopratutto i mac, sfruttiamo quindi la skill "wake on lan", la cerchiamo nel pannello di ricerca e seguiamo la procedura che ci viene mostrata.
+                <br> Dovrete inserire ip e mac-address dei computer ed assicurarvi che la scheda di rete degli stessi rimanga accesa nonostante lo spegnimento del computer (questa non è una guida, quindi queste cose cercatevele da soli visto che variano da computer a computer &lt;3 )
+                <br>
+                Impostata wake on lan, spostiamoci nelle routine e creiamone una chiamandola "accensione complessiva", dopo l'attivazione di WOL (wake on lan abbreviato) saranno comparsi tra i vostri dispositivi alexa friendly anche i computer, non ci basta che selezionarli ed impostarne l'accensione allt'avvio della routine. Aggiungiamo poi tutti gli altri dispositivi che vogliamo. 
+            </p>
+            <br>
+            <h4>Rendiamo più figo il tutto</h4>
+            <p>
+                Chiunque abbia mai usato un assistente vocale sa bene quanto la lingua italiana gli risulti difficile da interpretare, ciò comporta il doversi ripetere ed i tempi di attivazione delle routine si dilatano drasticamente. Senza menzionare il fatto che io sbiascichi più di un muratore carrarino all'ottava bottiglia di rosso annacquato, non so come la mia alexa riesca a capirmi senza friggere i bus della mobo.
+                <br>
+                Fatto sta che ora subentrano i nostri amici NFC.
+                <br>
+                Potete usare il tipo che volete, tessere, bracciali, anelli, adesivi, l'importante è che siano scrivibili ed abbiano una memoria da 512kb.
+                <br>
+                Io utilizzo un vecchio telefono come "lettore di tag" perch' il mio telefono principale ha l'antenna NFC rotta, voi usate ciò che vi è più congeniale.
+                <br>
+                Una volta deciso il tipo di dispositivo NFC da utilizzare rechiamoci sul sito di <a href="https://virtualsmarthome.xyz/url_routine_trigger/" target="_blank">urlTrigger</a> ed accediamo con l'account amazon.
+            </p>
+            <br>
+            <h4>Impostare gli NFC</h4>
+            <p>
+                Una volta entrati con il nostro account potremo virtualizzare dei campanelli smart, che potremo impostare come "Interruttori per avviare le routine create antecedentemente". Questi campanelli "suoneranno" ogni qual volta che ci collegheremo al link fornitoci da <a href="https://virtualsmarthome.xyz/url_routine_trigger/" target="_blank">urlTrigger</a>.
+                <br>
+                Una volta ottenuto il link, lo copiamo negli appunti del telefono e iniziamo a scrivere i nostri NFC, vi consigli odi usare <a href="https://play.google.com/store/apps/details?id=com.wakdev.wdnfc&gl=US" target="_blank">NFC Tools</a>, un'app dall'interfaccia chiara ed intuitiva.
+                <br>
+                Nell'app selezioniamo "inserisci url" ed incolliam oquello fornitoci dal sito. Premiamo poi "scrivi tag" ed avviciniamo il nostro tag NFC.
+            </p>
+            <br>
+            <h4>Test e Migliorie</h4>
+            <p>
+                Torniamo alla home del telefono ed avviciniamo il tag alla parte superiore dello stesso, si aprirà subito il nostro browser e (se tutto ha funzionato) la routine si dovrebbe avviare non appena verrà caricata la pagina di urlTrigger.
+                <br>
+                Facciamo ora qualche considerazione, i tag aprono una nuova scheda del browser ogni volta, se non le chiuderete le routine si attiveranno ongi volta che aprirete il browser e verranno caricate.
+                <br> 
+                Questo non è l'ideale, sopratutto se siete soliti utilizzare il vostro browser del telefono per navigare su internet.
+                <br>
+                Vi consiglio pertanto di utilizzare procedere come ho fatto io: utilizzate un vecchio telefono in disuso (ovviamente con lettore NFC), lo appoggiate da qualche parte su uno stand da 2€ di amazon, lo collegate alla corrente con un cavo usb e ci passate le tessere NFC come fosse il POS.
+                <br>
+                Così facendo non rischierete di attivare involontariamente le routine, avrete riutilizzato un vecchio dispositivo che sarebbe finito nella pattumiera o in un cassetto ad occupare spazio e sarà anche un po' più scenico quando lo mostrerete ai vostri amici :)
+            </p>
+            <br>
+            <h4>Conclusioni</h4>
+            <p>
+                Beh ora sapete come ho domotizzato camera mia, spero che questo piccolo e veloce "tutorial" vi sia piaciuto. Divertitevi a creare routine e riempire casa vostra di NFC per non dover conversare con quella scema di alexa.
+            </p>
+
+
+
+            <hr class="article">
+            <div class="g">
+                <p >
+                    Spero che questo articolo sia stato di vostro interesse e di avervi strappato un
+                    sorriso raccontando un pezzetto di me.
+                    <br>
+                    Per ora è tutto, leggi anche
+                    <a href="drawer.html">altri miei articoli:</a>
+                </p>
+            </div>
+        </article>
+
+        <footer>
+            <div class="firma">
+                <img class="firma-n" src="/@/Firma-n.svg" alt="la mia firma">
+                <img class="firma-b" src="/@/firma-b.svg" alt="la mia firma">
+            </div>
+            <div id="favicons">
+                <div id="favicons-black">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img src="/@/ig-black.png" alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img src="/@/tiktok-black.png" alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img src="/@/git-black.png" alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img src="/@/o-black.png" alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img src="/@/dsd-black.png" alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img src="/@/don-black.png" alt="donation icon, redirect to my  paypal page"></a>
+                    </span>
+                </div>
+
+                <div id="favicons-white">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img src="/@/ig-white.png" alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img src="/@/tiktok-white.png" alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img src="/@/o-white.png" alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img src="/@/git-white.png" alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img src="/@/dsd-white.png" alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img
+                            src="/@/don-white copia.png"
+                            alt="donation icon, redirect to my paypal page"></a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

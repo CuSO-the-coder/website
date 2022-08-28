@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="Come ho programmato un cruciverba in python | analisi del codice">
+        <title>Crucisberla | CuSO's Place</title>
+        <link rel="shortcut icon" href="/@/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="cruci-f/cruci.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="/@/favicon.png" align="left" width="100px" alt="this is my logo :)">
+            <h1>
+                <a href="/index.html" alt="redirect to homepage">
+                    CuSO's Place
+                </a>
+            </h1>
+            <h2>
+                My ideas and something else
+            </h2>
+        </header>
+        <br>
+        <hr>
+        <br>
+        <div class="title">
+            <h3 class="title">
+                Crucisberla
+            </h3>
+            <h3 class="subtitle">
+                - enigmistica in python -
+            </h3>
+            <div class="info">
+                <h4>
+                    <em>20/07/2022</em>
+                </h4>
+
+                <h4>
+                    25min
+                </h4>
+
+                <h4 class="cat">
+                    <a href="drawer.html#coding">
+                        <em>coding</em>
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <hr>
+        <br><br>
+
+        <article>
+            <h4>intro</h4>
+            <p>
+                Ma salve, eccomi tornato con un bell'articolo lungherrimo in cui racconterò un
+                progettino carino carino terminato giusto ieri.
+                <br>
+                A parte il titolo un pochino manipolato, oggi vi illustrerò passo passo il mio
+                primo cruciverba scritto in python. Non vi nascondo che usciranno aggiornamenti
+                e nuove funzionalità sul mio
+                <a href="https://github.com/CuSO-the-coder" target="_blank">profilo github</a>.
+            </p>
+            <br>
+            <h4>l'idea</h4>
+            <p>
+                Perchè un cruciverba? Ho 17 anni, non 71, non ho bisogno di fare la settimana
+                enigmistica per combattere l'alzheimer; ciò nonostante ne ho programmato uno,
+                ora vi racconto come mai.
+                <br>
+                Una dozzina di giorni fa mio nonno si ritrovò positivo al COVID, nulla di
+                preoccupante, giusto un po' di tosse e basta. Un giorno mi chiese di fare un
+                salto all'edicola del paese per comprargli la nuova pubblicazione
+                dell'enigmistica. Io, da bravo nipotino obbediente, eseguii i comandi.
+                <br>
+                Arrivato in edicola una domanda mi devastò: quanto sarebbe complicato
+                "digitalizzare" un'enigmistica?
+                <br>
+                Cioè dai, soluzioni, tabelle, quiz, errori... Sono un sacco di robe a cui
+                pensare. Arrivai a casa e ne parlai a mio nonno, il quale lavorò come
+                programmatore per IBM negli anni 60. La sua risposta fu: "oh bello,
+                programmatela te tutta l'enigmistica in assembly, in cobol o in basic, io sto
+                bene con quella di carta".
+                <br>
+                Io gli risposi: "nonno, va che adesso ci sono molti più linguaggi di
+                programmazione rispetto ai tuoi tempi, non sarà così complesso fare un
+                cruciverba in python".
+                <br>
+                "Eha, per me, ti vuoi friggere la testa... Vai al mare piuttosto". Disse lui.
+                <br>"La prendo come una sfida, domani te lo porto fatto e finito".
+                <br>
+                E con quest'ultima affermazione conclusi il discorso, gli posai l'enigmistica
+                sul tavolo dell'orto, andai su in casa e mi misi a lavorare.
+            </p>
+            <br>
+            <h4>Coding time!</h4>
+            <p>
+                Non ci crederete mai, ma il giorno dopo gli portai davvero un prototipo di
+                "cruciverba" scritto in python la sera prima.
+                <br>Stranamente impiegai anche poco tempo per realizzarlo... Avevo gia delle
+                    ottime basi da cui partire: mi ero immaginato le caselle del cruciverba come una
+                    "lista".
+                <br>Mi spiego meglio: da un punto di vista logico, immaginare una sola linea
+                    molto lunga di caselle è molto più semplice che utilizzare un sistema di assi
+                    cartesiani per distinguere la cella tramite le coordinate.
+                <br>Quindi, invece che giocare a battaglia navale, dovevo solo programmare un
+                    "editor di testo" che modificasse le caselle vuote.
+                <br>Però il cruciverba ha sia le definizioni orizzontali che verticali, come
+                    fare per queste ultime? Nulla di più stupido! Mi basta modificare le caselle ad
+                    intervalli regolari (che sono noti poichè uguali alla larghezza di una riga
+                    orizzontale).
+                <br>Bene, ora che abbiamo un'idea generale, possiamo finalmente analizzare il
+                    modo in cui l'ho programmato.
+            </p>
+            <section class="disclaimer">
+                <h4>Disclaimer</h4>
+                <p class="article">
+                    Sappiate che il codice che vedrete nelle righe seguenti non è provvisto di
+                    indentazione corretta, serve solo come esempio per spiegarvi brevemente il
+                    funzionamento del programma, se volete vedere il file originale andate sul mio
+                    <a href="https://github.com/CuSO-the-coder" target="_blank">profilo github</a>
+                </p>
+            </section>
+            <br>
+            <h4>Variabili globali e moduli</h4>
+            <p>
+                Per prima cosa importiamo i seguenti moduli:
+
+                <div class="code">
+                    <code>
+                        import os
+                        <br>
+                        import time
+                        <br>
+                        from unicodedata import name
+                        <br>
+                        from reader import feed
+                    </code>
+                </div>
+            </p>
+            <p>
+                OS ci servirà per agire sulla finestra del terminale, time per aggiungere dei
+                ritardi all'esecuzione de lcodice per rendere tutto più fruibile... dopo
+                capirete meglio cosa intendo.
+                <br>
+                Per quanto riguarda le variabili... beh, definiamo il cruciverba e il cruciverba
+                "completato"
+                <div class="code">
+                    <code>
+                        cruciverba = [
+                        <br>
+                        " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "#", " ",
+                        <br>
+                        " ", " ", " ", "#", " ", " ", " ", " ", "#", " ", " ", " ",
+                        <br>
+                        " ", "#", " ", " ", "#", " ", " ", " ", " ", "#", " ", " ",
+                        <br>
+                        " ", " ", " ", " ", " ", " ", "#", "#", " ", " ", " ", " ",
+                        <br>
+                        " ", " ", " ", "#", " ", "#", " ", " ", " ", " ", " ", " ",
+                        <br>]
+                        <br>crucicorretto = [
+                        <br>#Lezzooo, guarda che faccia, non se l'aspettava... pensavi di trovare gia le
+                            soluzioni eh...
+                        <br>]
+                    </code>
+                </div>
+            </p>
+            <p>
+                Come vedete, ho utilizzato due liste per agevolarmi la modifica delle celle
+                tramite gli indici delle stesse. Definiamo ora due variabili utili per
+                orientarci nel nostro programma: il numero di celle in una riga e la quantità di
+                celle del nostro cruciverba
+                <div class="code">
+                    <code>
+                        maxline = 12
+                        <br>maxcells = 60
+                    </code>
+                </div>
+            </p>
+            <p>
+                Infine, creiamo i 2 dizionari che conterranno le nostre definizioni:
+                <div class="code">
+                    <code>
+                        definizioniV = {
+                        <br>
+                        "0)": "Si mette in moto (ma non a Napoli)",
+                        <br>
+                        "1)": "Sigla di Rovigo",
+                        <br>
+                        "2)": "Qualcosa che serve",
+                        <br>
+                        "4)": "192.168.1.120",
+                        <br>
+                        "5)": "Isola delle Fiji",
+                        <br>
+                        "6)": "Rimbomba nelle grotte",
+                        <br>
+                        "7)": "Random Access Memory",
+                        <br>
+                        "9)": "Preposizione inglese",
+                        <br>
+                        "11)": "Unione in inglese",
+                        <br>
+                        "22)": "Può essere a tutto sesto",
+                        <br>
+                        "27)": "Sodio",
+                        <br>
+                        "32)": "Azienda Provinciale Trasporti",
+                        <br>
+                        "37)": "Gas nobile del 3° periodo",
+                        <br>
+                        "40)": "Sigla di Torino",
+                        <br>
+                        "45)": "Esclamazione di stupore"
+                        <br>}
+                    </code>
+                    <code>
+                        definizioniO = {
+                        <br>
+                        "0)": "Lo stai facendo ora",
+                        <br>
+                        "12)": "Attack On Titan",
+                        <br>
+                        "16)": "Il contrario di 'tanta'",
+                        <br>
+                        "21)": "Sin/Cos",
+                        <br>
+                        "26)": "Di, A, Da, {...}, Con, Su, Per, Tra, Fra",
+                        <br>
+                        "29)": "Museum of Modern Art",
+                        <br>
+                        "34)": "Rio senza 'o'",
+                        <br>
+                        "36)": "Il contrario di 'elevare'",
+                        <br>
+                        "44)": "Se non è tanto è {...}",
+                        <br>
+                        "48)": "Le segna l'orologio",
+                        <br>
+                        "55)": "Il 'serpentese' per i programmatori"
+                        <br>}
+                    </code>
+                </div>
+            </p>
+            <p>
+                Bene, passiamo ora a due variabili "inutili" al funzionamento del programma ma
+                che possono essere delle chicche divertenti da mostrare all'utente: intendo il
+                numero di tentativi per risolvere il cruciverba e quanto tempo si ha impiegato.
+                <div class="code">
+                    <code>
+                        tentativi = 0
+                        <br>tic = time.perf_counter()
+                    </code>
+                </div>
+            </p>
+            <br>
+            <h4>Loading screen</h4>
+            <p>
+                Sono un maniaco, ho programmato un loading screen in cui appare il nome del
+                programam e il mio nickname, lo so, potevo evitarlo, ma sono troppo
+                egocentrico..
+                <div class="code">
+                    <code>
+                        def loading():
+                        <br>
+                        for i in range(6):
+                        <br>
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        <br>
+                        print("\n")
+                        <br>
+                        print("Caricamento")
+                        <br>
+                        print("° "*(i+1))
+                        <br>
+                        time.sleep(0.5)
+                        <br>
+                        <br>
+                        time.sleep(1)
+                        <br>
+                        <br>
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        <br>
+                        <br>
+                        print("\n\n")
+                        <br>
+                        print(" ______ __ __ __ \n / ..................", end="\n\n")
+                        <br>
+                        print("-------------------")
+                        <br>
+                        print("╔═══╗ ╔═══╗╔═══╗\n║╔═╗║ ║╔═╗║║╔═╗║\n║║ ╚╝╔╗╔╗║╚══╗║..................",")
+                        <br>
+                        print("-------------------")
+                        <br>
+                        time.sleep(2.4)
+                        <br>
+                        <br>
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                    </code>
+                </div>
+            </p>
+            <p>
+                Come avrete visto, ho utilizzato os per "pulire" il terminale, questo perchè il
+                cruciverba sarà visualizzabile come "output" del programma, proprio dalla
+                finestra del terminale, e non volevo che fosse pieno di scritte del tipo
+                "c://user/namUser/desktop/crucisberla.py>>>>>> python3.9 >>>>>>" e robe così,
+                diamo una bella pulita.
+                <br>
+                Ovviamente ho eliso gran parte del print del loading screen perchè sarebbe
+                diventato impossibile da leggere su smartphone, vi ricordo pertanto che il
+                codice è disponibile sul mio
+                <a href="https://github.com/CuSO-the-coder" target="_blank">profilo github</a>.
+                <br>
+                Che altro dire sulla funzione loading()? A dire il vero non saprei, printa robe
+                e basta, passiamo alla prossima
+            </p>
+            <br>
+            <h4>Tutorial</h4>
+            <p>
+                Da bravo gamer so quanto un tutorial possa fare la differenza... ok sto
+                mentendo, piuttosto imparo i comandi di un gioco da solo, i tutorial sono robe
+                per bambini stupidi. Ma non in questo caso, infatti il terminale di python non è
+                sta gran cosa a livello di interfaccia, quindi una piccola introduzione a ciò
+                che l'utente dovrà inserire mi sembrava doverosa.
+                <div class="code">
+                    <code>
+                        def askTuto():
+                        <br>
+                        print("\n")
+                        <br>
+                        print("*--------------------------------------------------------------------------------------------------------------------------*")
+                        <br>
+                        print("| |")
+                        <br>
+                        print("| Benvenuto su 'Crucisberla', un cruciverba giocabile tramite il
+                        terminale di Python, desideri avere un piccolo tutorial? |")
+                        <br>
+                        print("| |")
+                        <br>
+                        print("*--------------------------------------------------------------------------------------------------------------------------*")
+                        <br>
+                        <br>
+                        y_n = ""
+                        <br>
+                        <br>
+                        while not (y_n == "si" or y_n == "no" or y_n == "sì"):
+                        <br>
+                        y_n = input("Risposta [si/no]: \t")
+                        <br>
+                        y_n = y_n.lower()
+                        <br>
+                        <br>
+                        if y_n == "sì" or y_n == "si":
+                        <br>
+                        print("Iniziamo il tutorial!")
+                        <br>
+                        <br>
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        <br>
+                        <br>
+                        print("Ti verrà mostrata una situazione di questo tipo: \n")
+                        <br>
+                        <br>
+                        for i in range(0, maxcells, maxline):
+                        <br>
+                        print("|", end="")
+                        <br>
+                        for j in range(maxline):
+                        <br>
+                        print(cruciverba[i+j], end="")
+                        <br>
+                        print("|", end="")
+                        <br>
+                        print("\n")
+                        <br>
+                        <br>
+                        print("Le caselle vuote le dovrai riempire con delle parole in base alla
+                        definizione corrispondente, gli # sono caselle annerite, quindi non potrai
+                        modificarli.")
+                        <br>
+                        time.sleep(4)
+                        <br>
+                        <br>
+                        print("Ti verrà chiesto il numero della casella/definizione e il verso in cui
+                        inserire la parola (veritcale o orizzontale).")
+                        <br>
+                        time.sleep(2)
+                        <br>
+                        <br>
+                        print("E questo è quanto, divertiti!")
+                        <br>
+                        time.sleep(2)
+                        <br>
+                        <br>
+                        game()
+                        <br>
+                        <br>
+                        else:
+                        <br>
+                        print("Va bene, divertiti!")
+                        <br>
+                        time.sleep(3)
+                        <br>
+                        <br>
+                        game()
+
+                    </code>
+                </div>
+            </p>
+            <p>
+                Anche qui tutto comprensibile, una casuale domanda a cui rispondere sì o no, un
+                controllo sull'input per evitare errori e dei print intervallati per rendere
+                leggibili le scritte.
+                <br>
+                Infine, un richiamo alla funzione game() che vedremo più tardi.
+            </p>
+            <br>
+            <h4>Visualizzare il cruciverba</h4>
+            <p>
+                per mostrare il fantastico cruciverba con le sue definizioni abbiamo bisogno di
+                una funzione apposita, eccola qui:
+                <div class="code">
+                    <code>
+                        def view():
+                        <br>
+                        <br>
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        <br>
+                        <br>
+                        for i in range(0, maxcells, maxline):
+                        <br>
+                        print("|", end="")
+                        <br>
+                        for j in range(maxline):
+                        <br>
+                        print(cruciverba[i+j], end="")
+                        <br>
+                        print("|", end="")
+                        <br>
+                        print("\n")
+                        <br>
+                        <br>
+                        print("\n")
+                        <br>
+                        <br>
+                        print("VERTICALI")
+                        <br>
+                        for ele in definizioniV:
+                        <br>
+                        print(ele, end="\t")
+                        <br>
+                        print(definizioniV[ele])
+                        <br>
+                        <br>
+                        print("\n")
+                        <br>
+                        <br>
+                        print("ORIZZONTALI")
+                        <br>
+                        for ele in definizioniO:
+                        <br>
+                        print(ele, end="\t")
+                        <br>
+                        print(definizioniO[ele])
+                        <br>
+                        <br>
+                        print("\n")
+                    </code>
+                </div>
+            </p>
+            <p>
+                Vi ricordate "maxcells" e "maxline"? Bene, sono tornate per evitare di scrivere
+                a mano i numeri ed incappare in errori di calcolo, che altro non farebbero se
+                non bloccare il programma.
+                <br>Ritroviamo poi il nostro caro OS per pulire il terminale e un paio di for
+                    annidati per mostrare il cruciverba a mo' di tabella.
+                <br>
+                Infine, stampiamo a schermo i dizionari con le definizioni.
+            </p>
+            <br>
+
+            <h4>askO / askV</h4>
+            <p>Bene bene bene, ora entriamo in qualche funzione più caruccia: gli "ask".
+                <br>Questi ci serviranno per modificare in maniera capillare le caselle del
+                    cruciverba, vediamo come.
+                <div class="code">
+                    <code>def askO(n):
+                        <br>
+                        <br>
+                        c = 0
+                        <br>
+                        <br>
+                        for i in range(n, maxcells+1):
+                        <br>
+                        if cruciverba[i] == "#":
+                        <br>
+                        c = i-n
+                        <br>
+                        else:
+                        <br>
+                        c = (((n//maxline)+1)*maxline)-n
+                        <br>
+                        <br>
+                        print(f"Lunghezza della parola {c} caratteri")
+                        <br>
+                        <br>
+                        p = input("inserisci la parola:\n")
+                        <br>
+                        <br>
+                        if len(p) < c:
+                        <br>
+                        print("Parola troppo corta, reinserire")
+                        <br>
+                        askO(n)
+                        <br>
+                        elif len(p) > c:
+                        <br>
+                        print("Parola troppo lunga :/")
+                        <br>
+                        askO(n)
+                        <br>
+                        else:
+                        <br>
+                        p = p.upper()
+                        <br>
+                        for i in range(len(p)):
+                        <br>
+                        cruciverba[n+i] = p[i]
+                    </code>
+                    <code>
+                        def askV(n):
+
+                        <br>
+                        if n % maxline == 0:
+                        <br>
+                        c = -1
+                        <br>
+                        else:
+                        <br>
+                        c = 0
+                        <br>
+                        <br>
+                        for i in range(n, maxcells+1, maxline):
+                        <br>
+                        if cruciverba[i] == "#":
+                        <br>
+                        break
+                        <br>
+                        else:
+                        <br>
+                        c += 1
+                        <br>
+                        <br>
+                        print(f"Lunghezza della parola {c}caratteri")
+                        <br>
+                        <br>
+                        p = input("Inserisci la parola:\n")
+                        <br>
+                        <br>
+                        if len(p) < c:
+                        <br>
+                        print("Parola troppo corta, reinserire")
+                        <br>
+                        askV(n)
+                        <br>
+                        elif len(p) > c:
+                        <br>
+                        print("Parola troppo lunga :/")
+                        <br>
+                        askV(n)
+                        <br>
+                        else:
+                        <br>
+                        p = p.upper()
+                        <br>
+                        for i in range(len(p)):
+                        <br>
+                        cruciverba[n+i*maxline] = p[i]
+
+                    </code>
+                </div>
+            </p>
+            <p>Al contrario delle altre funzioni viste finora, queste due necessitano di un
+                parametro "n", che vedremo essere il numero della cella da cui si vuole partire
+                per scrivere la parola, da qui il programma conterà quanti sazi vuoti ci restano
+                fino alla fine della riga o quanto dista la prossima casella annerita.
+                <br>Come potrete notare, tra le due funzioni cambia il come vengono modificate
+                    le celle: nella prima notiamo un cambiamento in successione diretta, il secondo
+                    tramite intervalli dettati dalla variabile "maxline".
+            </p>
+            <br>
+            <h4>correzione del cruciverba</h4>
+            <p>
+                Ora vediamo due funzioni che vengono richiamate nella fase finale del gioco:
+                correggi() e viewFin().
+                <div class="code">
+                    <code>
+                        def correggi():
+
+                        <br>
+                        if cruciverba == crucicorretto:
+                        <br>
+                        toc = time.perf_counter()
+                        <br>
+                        print(
+                        <br>
+                        f"Complimenti! \n Hai completato il cruciverba in maniera corretta in
+                        {tentativi} tentativi impiegando {tic-toc} secondi")
+                        <br>
+                        viewfin()
+                        <br>
+                        else:
+                        <br>
+                        print("Mi dispiace, hai commesso degli errori, riprova :( ")
+                        <br>
+                        view()
+
+                    </code>
+                    <code>def viewFin():
+
+                        <br>
+                        for i in range(0, maxcells, maxline):
+                        <br>
+                        print("|", end="")
+                        <br>
+                        for j in range(maxline):
+                        <br>
+                        print(cruciverba[i+j], end="")
+                        <br>
+                        print("|", end="")
+                        <br>
+                        print("\n")</code>
+                </div>
+            </p>
+            <p>La prima corregge il cruciverba e ci dice se abbiamo commesso degli errori,
+                in caso negativo ci invia un messaggio di congratulazioni mostrandoci il numero
+                di tentativi ed il tempo impiegato. (tramite le variabili supplementari che
+                abbiamo inizializzato poco prima.
+                <br>
+                La seconda è una versione ridotta della funzione view(), vista prima. Infatti
+                mostra solamente il cruciverba completato senza le definizioni.
+            </p>
+            <br>
+            <h4>Il gioco completo</h4>
+            <p>Ora che abbiamo visto le funzioni principali, direi che sia il momento di
+                mostrarvi come vengono sfruttate.
+
+                <div class="code">
+                    <code>
+                        def game():
+                        <br>
+                        <br>
+                        while True:
+                        <br>
+                        <br>
+                        view()
+                        <br>
+                        <br>
+                        n = -1
+                        <br>
+                        <br>
+                        while not (0 <= n <= maxcells-1):
+                        <br>
+                        n = int(input("Inserisci la cella:\n"))
+                        <br>
+                        if cruciverba[n] == "#":
+                        <br>
+                        print("Hey, non puoi cambiare le caselle annerite")
+                        <br>
+                        n = -1
+                        <br>
+                        <br>
+                        t = ""
+                        <br>
+                        while not(t == "o" or t == "v" or t == "orizzontale" or t == "verticale"):
+                        <br>
+                        t = input("Verticale o orizzontale:\n")
+                        <br>
+                        t = t.lower()
+                        <br>
+                        <br>
+                        if t == "orizzontale" or t == "o":
+                        <br>
+                        askO(n)
+                        <br>
+                        elif t == "verticale" or t == "v":
+                        <br>
+                        askV(n)
+                        <br>
+                        <br>
+                        if cruciverba.count(" ") == 0:
+                        <br>
+                        risp = input("Cruciverba completato, correggerlo? (sì/no) \n")
+                        <br>
+                        risp = risp.lower()
+                        <br>
+                        if risp == "sì":
+                        <br>
+                        tentativi += 1
+                        <br>
+                        correggi()
+
+                    </code>
+                </div>
+            </p>
+            <p>Come vedete, c'è un ciclo infinito che richiama la funzione view(), che
+                mostra il cruciverba con le definizioni, poi c'è la richiesta della cella "n" in
+                cui inserire la parola, segue la decisione di inserire la parola in orizzontale
+                o verticale. In questo punto vengono richiamate le funzioni "ask", viste
+                antecedentemente che chiederanno la parola da inserire nel cruciverba.
+                <br>
+                Ultimo ma non per importanza, un piccolo controllo per verificare quando il
+                cruciverba viene completato (ovvero quando non ci sono più caselle vuote), che
+                rimanda alla funzione di correzione illustrata appena sopra.
+            </p>
+            <br>
+            <h4>Mettiamo tutto insieme</h4>
+            <p>Come avrete notato, anche game() è una funzione, quindi va richiamata, bene:
+                ecco come ho fatto io:
+                <div class="code">
+                    <code>def main():
+                        <br>
+                        loading()
+                        <br>
+                        askTuto()
+                    </code>
+                    <code>
+                        if __name__ == "__main__":
+                        <br>
+                        main()
+
+                    </code>
+                </div>
+            </p>
+            <p>Considerato che tutto gira attorn oad un loop della funzione game, e le altre
+                funzioni "ask" e di controllo vengono eseguite da quella non ci sarà bisogno di
+                richiamarle. Per richiamare game() basta eseguire "askTuto", funzione che vi ho
+                spiegato subito dopo a quella del loading screen.
+                <br>Se vi ricordate, alla fine c'era appunto la stringa di codice che richiamava
+                    l'avvio del gioco, nulla di più semplice.
+                <br>Potremmo dire che il "programma" è solo composto da 2 linne di codice: il
+                    comando
+                <br>
+                " if __name__=='__main__': ";
+                <br>
+                questo perchè è l'unico al di fuori di una qualsiasi funzione.
+            </p>
+            <br>
+            <h4>Conclusioni</h4>
+            <p>Che ne dite di questo nuovo progetto? Siete curiosi dei suoi possibili
+                aggiornamenti?
+                <br>
+                Io sì, quindi anche se a voi non interessano li porterò ugualmente :)
+                <br>
+                Ah... ora sto lavorando sul "digitalizzare" una partita di scopa.... prossimo
+                articolo?
+            </p>
+
+            <hr class="article">
+            <div class="g">
+                <p>
+                    Spero che questo articolo sia stato di vostro interesse e di avervi strappato un
+                    sorriso raccontando un pezzetto di me.
+                    <br>
+                    Per ora è tutto, leggi anche
+                    <a href="drawer.html">altri miei articoli:</a>
+                </p>
+            </div>
+        </article>
+        <footer>
+            <div class="firma">
+                <img class="firma-n" src="/@/Firma-n.svg" alt="la mia firma">
+                <img class="firma-b" src="/@/firma-b.svg" alt="la mia firma">
+            </div>
+            <div id="favicons">
+                <div id="favicons-black">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img src="/@/ig-black.png" alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img src="/@/tiktok-black.png" alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img src="/@/git-black.png" alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img src="/@/o-black.png" alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img src="/@/dsd-black.png" alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img src="/@/don-black.png" alt="donation icon, redirect to my  paypal page"></a>
+                    </span>
+                </div>
+
+                <div id="favicons-white">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img src="/@/ig-white.png" alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img src="/@/tiktok-white.png" alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img src="/@/o-white.png" alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img src="/@/git-white.png" alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img src="/@/dsd-white.png" alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img
+                            src="/@/don-white copia.png"
+                            alt="donation icon, redirect to my paypal page"></a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

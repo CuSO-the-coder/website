@@ -1,0 +1,259 @@
+body {
+    background-color: antiquewhite;
+}
+
+
+header> h1 {
+    font-size: 42pt;
+    margin-left: 5%;  
+    margin-bottom: 0%;  
+}
+header >img {
+    width: 100px; float: left; margin-inline: 15px;
+}
+header> h4 {
+    font-size: 15pt;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+hr {
+    border-color: #f26d85;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darksalmon;
+    
+}
+  
+li.nav {
+    float: left;
+}
+
+li.nav a {
+    display: block;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    
+}
+li.nav a:hover {
+    background-color: #f26d85;
+    color: azure;
+}
+
+li.nav {
+    border-right: 1px solid #bbb;
+}
+
+article {
+    margin-left: 15%;
+    margin-top: 0%;
+    margin-right: 15%;
+
+}
+
+aside {
+    width: 15%;
+    float: left;
+}
+
+.indice {
+    border-radius: 5px;   
+    border: 1px solid #f26d85;
+    width: 90%;     
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.indice> p {
+    margin: 3px;
+    text-transform: uppercase;
+
+}
+ul.as {
+    list-style-type:georgian;
+    text-transform:capitalize;
+    color: black; 
+}
+ 
+ul.as> hr {
+    border-style: ridge;
+    width: 60%;
+    border-color: #f26d85;
+    margin-left: 0%;
+
+}
+li>a {
+    color: black;
+}
+li>a:hover {
+    color: #f26d85;
+}
+article >a {
+    text-decoration: none;
+    color: grey;
+}
+article> hr { 
+    width: 30%;
+    align-content: center;
+}
+aside.a2 {
+    float: right;
+}
+iframe {
+    width:120px;height:240px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 50px;
+    border: none;
+    border-radius: 15px;
+}
+img.t {
+    width: 35px;
+    height: 35px;
+    float: right;
+}
+
+img.g {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 15px;
+}
+img.p {
+    margin-left: auto;
+    margin-right: 5%;
+    width: 120px;
+    height: 120px;
+}
+
+#pics {
+    margin-right: 17%;
+    display: block;
+}
+
+img.pics{
+    border-radius: 100px;
+    width: auto;
+    height: 150px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 30px;
+}
+.a3{
+    display: none;
+}
+footer {
+    background-color: darksalmon;
+    text-align: center;
+    color: azure;
+    margin-top: 300px;
+    height: 200px;
+    
+}
+footer > a {
+    color: azure;
+    text-decoration: none;
+}
+footer > p >a {     color: azure;
+    text-decoration: none;}
+footer > p {
+    text-align: left; margin-left: 15px;
+}
+
+
+@media only screen and (max-width: 1440px) and (orientation:portrait) {
+    header >h1 {
+        font-size: 28pt;
+    }
+    header > h2 {
+        margin-left: 15px;
+        font-size: 14pt;
+    }
+    header{
+        margin-bottom: 30px;
+    }
+    
+    ul {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+    }
+    ul.nav{
+        border-radius: 5px;
+    }
+    li.nav:nth-child(1n){
+        border-bottom:2px solid #f26d85;
+    }
+   
+    li.nav:last-child{
+        border-bottom: none;
+    }
+
+    aside{
+        all: unset;
+    }
+
+    .indice{
+        position: unset;
+        border: 1px solid #f26d85;
+        border-radius: 5px;   
+        width: 100%;
+    }
+    article{
+        margin:auto;
+        margin-bottom: 30px;
+        width: 90%;
+
+    }
+
+    .indice>p{
+        text-align: center;
+    }
+
+    ul.as>li{
+        margin: 10px 30px;
+    }
+    ul.as> hr {
+        border-style: ridge;
+        width: 100%;
+    }
+    
+    .a2{
+        display: none;
+    }
+    img.g{
+        margin:30px  auto;
+        width: 80vw
+    }
+
+    iframe{
+        all: unset;
+        width:120px;
+        height:240px;
+        border: none;
+        border-radius: 15px;
+        margin: 4px; 
+	   margin-top: 30px
+    }
+    .a3{
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+        align-items: center;
+    }
+    footer{
+        margin-top: 30px;
+    }
+
+}

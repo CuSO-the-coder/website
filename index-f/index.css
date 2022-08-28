@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    background: linear-gradient(176deg, #ffffffff 10%, #b2d3f4 23% , #c3b3f3e3 78%, #ffffffff);
+    font-family: Helvetica;
+}
+
+/**/
+
+header {
+    margin-bottom: 24px;
+}
+.p5{
+    margin-left:  24px;
+    margin-top: 5px;
+}
+
+.p5 > h1 > a {
+    text-decoration: none;
+    color: black;
+    font-size: 40pt;
+}
+
+.p5 > h2 {
+    font-size: 18pt;
+    line-height: 0;
+}
+p {
+    color: #2b2f33;
+    font-size: 15pt;
+}
+
+a {
+    text-decoration: none;
+    color: navy;
+}
+
+div.d{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+p.d {
+    margin-left: 20%;
+    text-align: right;
+    overflow: hidden;
+}
+a.i {
+    float: right;
+    margin-right:20%;
+}
+[avatar] {
+    border-radius: 100%;
+    width: 230px;
+    height: 230px;
+    padding-left: 20px;
+}
+
+/**/
+
+article {
+    width: 100%;
+}
+
+#carousel {
+    display: flex;
+    clear: both;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 15px;
+    height: 250px;
+    width: 600px;
+}
+.cardf {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.8s;
+
+}
+.card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+.card-front {
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    background: #2b2f33;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: 0.5s;
+}
+.card-back {
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #2b2f33;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 0.5s;
+}
+
+.cardlogo {
+    height: 250px;
+    width: 250px;
+    float: left;
+    border-right: 2px solid white;
+    border-radius: 20px 0 0 20px;
+}
+img.cl{
+    width: 200px;
+    height: auto;
+    margin: 33px auto 32px;
+    display: block;
+    border-radius: 10px;
+}
+
+.cardtitle1 {
+    margin-left: 275px;
+    font-size: 30pt;
+    margin-bottom: 0%;
+}
+.cardtitle2 {
+    text-align: center;
+    font-size: 30pt;
+    margin-bottom: 0%;
+}
+.cardinfo {
+    text-align: right;
+    margin-right: 5px;
+}
+
+.carddate {
+    margin-right: 10px;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+.cardtext {
+    text-align: center;
+    margin: 5px;
+    color: #ffffffff;
+}
+div.more{
+    width:100%;
+}
+h3.more {
+    margin-right: 24px;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 8px;
+    float: right;    
+    background: #2b2f33; 
+    color: #ffffffff;
+}
+h3.more:hover{
+    color: #ffdeb2;
+
+}
+
+/**/
+
+footer {
+    min-height: 540px;
+    position: relative;
+}
+.quote {
+    margin-left: 24px;
+}
+
+q {
+    font-family: comic sans ms;
+    color: #2b2f33;
+}
+.credits {
+    margin-left: 24px;
+}
+
+.firma-b{
+    display: none !important;
+}
+
+.firma-n{
+    width: 100px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    display: inline !important;
+}
+
+#favicons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+#favicons-black > span > a > img {
+    width: 35px;
+    height: auto;
+    margin-inline: 5px;
+    margin-bottom: 5px;
+    display: inline !important;
+}
+#favicons-white {
+    display: none;
+}
+
+/********/
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(176deg, #2b2f33 10%, #b2d3f4 23% , #c3b3f3e3 78%, #2b2f33);
+    }
+    .p5 > h1 > a {
+        color: #ffffffff;
+    }
+    h2, h3{
+        color: #ffffffff;
+    }
+    p, q, em{
+        color: whitesmoke;
+    }
+    a{
+        color:#ffdeb2
+    }
+    footer {
+        min-height: 540px;
+    }
+    .firma-n{
+        display: none !important;
+    }
+    
+    .firma-b{
+        width: 100px;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        display: inline !important;
+    }
+
+    #favicons-black {
+        display: none ;
+    }
+
+    #favicons-white {
+        display: inline !important;
+    }
+
+    #favicons-white > span > a > img {
+        width: 35px;
+        height: auto;
+        margin-inline: 5px;
+        margin-bottom: 5px;
+    }
+
+
+
+}
+
+/********/
+
+@media only screen and (max-width: 1440px) and (orientation:portrait) {
+    header{
+    min-width:1px;
+    }
+    .p5 > h1 > a{
+        font-size: 28pt;
+    }
+    .p5 > h2 {
+        margin-left: 15px;
+        font-size: 12pt;
+    }
+
+    div.d{
+        margin-top: 40px;
+        flex-direction: column-reverse;
+    }
+    p.d {
+        margin:0 15px;
+        text-align: center; 
+        overflow: scroll;
+
+    }
+    a.i {
+        float: none;
+        display: block;
+        margin: auto;
+    }
+    [avatar] {
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        padding: 0%;
+    } 
+
+
+    .card {
+        height: 550px;
+        width: 250px;
+    }
+    .card:hover .card-front {
+        transform: rotateX(-180deg);
+    }
+    .card:hover .card-back {
+        transform: rotateX(0deg);
+    }
+    .card-front {
+        transform: rotateX(0deg);
+    }
+    .card-back {
+        transform: rotateX(180deg);
+    }
+
+    .cardlogo  {
+        border-right: none; 
+        border-BOTTOM: 2px solid white;
+        border-radius: 20px 20px 0 0 ;
+        margin-bottom: 10px;
+    }
+    .cardtitle1 {
+        margin: 50px 0 0;
+        text-align: center;
+        font-size: 30pt;
+    }
+    .cardtitle2{
+        font-size: 2em;
+    }
+    .minor{
+        font-size: 27pt;
+    }
+    mail{
+        font-size:13pt
+    }
+        #favicons-white > span > a > img {
+        width: 30px;
+    }
+        #favicons-black > span > a > img {
+        width: 30px;
+    }
+
+}

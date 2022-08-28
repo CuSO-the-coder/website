@@ -1,0 +1,230 @@
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+/* header */
+header {
+    margin-left: 24px;
+    margin-top: 5px;
+}
+header > h1 > a {
+    text-decoration: none;
+    color: black;
+    font-size: 40pt;
+}
+header > h2 {
+    font-size: 18pt;
+    line-height: 0;
+}
+hr {
+    width: 94%;
+    border-color: #c3b2f4;
+    background-color: #c3b2f4;
+    height: 3px;
+    border-radius: 100%;
+}
+div.title {
+    text-align: center;
+}
+h3.title {
+    margin-top: 100px;
+    font-size: 4em;
+    line-height: 0;
+}
+h3.subtitle {
+    font-size: 1.5em;
+    line-height: ;
+}
+
+h4 {
+    font-size: 1em;
+    text-transform: capitalize;
+    padding-bottom: 0;
+}
+.info {
+    display: flex;
+    justify-content: center ;
+    margin-top:100px;
+}
+.info > h4{
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+em.t{
+    font-family: helvetica;
+}
+/**/
+
+.disclaimer{
+    border-radius: 10px;
+    border-style: solid ;
+    border-color: #efefa5;
+    margin:0 7% ;
+    text-align: center;
+}
+
+article {
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border-style: hidden solid;
+    border-color: #b2d3f4;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+.img{
+    text-align: center;
+    margin: 30px 0 
+}
+img.article{
+    border:3px solid #ffdeb2;
+    border-radius: 4px;
+    width: 55vw;
+
+}
+p {
+    padding: 0 20px;
+    line-height: 1.5;
+}
+q {
+    font-style: italic;
+    font-family: 'Courier New';
+    font-size: small;
+}
+b{
+    font-weight: bold;
+}
+
+em{
+    font-family: "Bradley hand";
+    text-transform: uppercase;
+}
+
+
+ul {
+    line-height: 1.1;
+}
+p > a {
+    color: navy;
+}
+hr.article{
+    width: 36px;
+    height: 3px; 
+}
+div.g {
+    text-align: center;
+}
+/**/
+.firma{
+    position: relative;
+}
+
+.firma-b {
+    display: none !important ;
+    position: absolute;
+    bottom: 0;
+}
+
+.firma-n {
+    width: 100px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    display: inline !important;
+}
+#favicons {
+    position: relative;
+    margin: 10px;
+}
+
+#favicons-black > span > a > img {
+
+    width: 35px;
+    height: auto;
+    margin-inline: 5px;
+    margin-bottom: 5px;
+    display: inline !important;
+}
+
+#favicons-white {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: none;
+}
+
+#favicons-black {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+ }
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: #2b2f33;
+        color: white;
+    }
+    header > h1 > a {
+        color: white;
+    }
+
+    #favicons-black {
+        display: none ;
+    }
+
+    #favicons-white {
+        display: inline !important;
+    }
+
+    #favicons-white > span > a > img {
+        width: 35px;
+        height: auto;
+        margin-inline: 5px;
+        margin-bottom: 5px;
+    }
+    .firma-n {
+        display: none !important;
+    }
+
+    .firma-b {
+        width: 100px;
+        padding: 10px;
+        display: inline !important;
+    }
+    p > a {
+        color: #ffdeb2;
+    }
+}
+
+@media only screen and (max-width: 1440px) and (orientation:portrait) {
+    header > h1 > a {
+        font-size: 28pt;
+    }
+    header > h2 {
+        margin-left: 15px;
+        font-size: 12pt;
+    }
+    
+    h3.title {
+    margin-top: 100px;
+    font-size: 3em;
+    line-height: 0;
+}
+    h3.subtitle {
+        font-size: 1.2em;
+        line-height: 1;
+        margin: 0 2px
+    }
+    #favicons-white > span > a > img {
+        width: 30px;
+    }
+    #favicons-black > span > a > img {
+        width: 30px;
+    }
+}

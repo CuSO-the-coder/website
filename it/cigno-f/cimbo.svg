@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+[
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:layerName CDATA #IMPLIED >
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:mask CDATA #IMPLIED >
+<!ATTLIST text
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:width CDATA #IMPLIED >
+
+<!ATTLIST path
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:blendMode CDATA #IMPLIED >
+<!ATTLIST path
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowColor CDATA #IMPLIED >
+<!ATTLIST path
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowOpacity CDATA #IMPLIED >
+<!ATTLIST path
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowRadius CDATA #IMPLIED >
+<!ATTLIST path
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowOffset CDATA #IMPLIED >
+<!ATTLIST path
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowAngle CDATA #IMPLIED >
+
+<!ATTLIST image
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:blendMode CDATA #IMPLIED >
+<!ATTLIST image
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowColor CDATA #IMPLIED >
+<!ATTLIST image
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowOpacity CDATA #IMPLIED >
+<!ATTLIST image
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowRadius CDATA #IMPLIED >
+<!ATTLIST image
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowOffset CDATA #IMPLIED >
+<!ATTLIST image
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowAngle CDATA #IMPLIED >
+
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:blendMode CDATA #IMPLIED >
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowColor CDATA #IMPLIED >
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowOpacity CDATA #IMPLIED >
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowRadius CDATA #IMPLIED >
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowOffset CDATA #IMPLIED >
+<!ATTLIST g
+  xmlns:vectornator CDATA #FIXED "http://vectornator.io"
+  vectornator:shadowAngle CDATA #IMPLIED >
+
+<!ENTITY % SVG.filter.extra.content  "| feDropShadow" >
+<!ELEMENT feDropShadow EMPTY>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  dx CDATA #IMPLIED>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  dy CDATA #IMPLIED>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  stdDeviation CDATA #IMPLIED>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  flood-opacity CDATA #IMPLIED>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  in CDATA #IMPLIED>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  result CDATA #IMPLIED>
+<!ATTLIST feDropShadow
+  xmlns:svg CDATA #FIXED "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+  flood-color CDATA #IMPLIED>
+]
+>
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 102400 102400" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<clipPath id="ArtboardFrame">
+<rect height="102400" width="102400" x="0" y="0"/>
+</clipPath>
+<g clip-path="url(#ArtboardFrame)" id="Livello-1" vectornator:layerName="Livello 1">
+<path d="M-9628.19-8299.77L110749-8299.77L110749 106377L-9628.19 106377L-9628.19-8299.77Z" fill="#d8bfd8" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<g opacity="1">
+<path d="M9628.32 74463L33134.3 47279.1L43655.1 63457.3C43655.1 63457.3 48594.5 53649 48407.8 53969.6L61786.8 67229.2L59209 87821.7L9628.32 74463Z" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M14546.1 11406.6L13352 14222.5C13335.9 14216.7 33134.3 47279.1 33134.3 47279.1L37454.1 43046.1L48383.8 54044L51681.5 47106.4L14546.1 11406.6Z" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M64249.6 50770L61786.8 67229.2C61786.8 67229.2 68523.3 73867.2 68609.1 73881.3L99241.1 38420L69214.9 48918C69214.9 48918 72837.6 55117.8 72823.5 55239L65526.6 50295.8L64249.6 50770Z" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M69470.7 29197.2" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M70640.8 7228.47C70734.3 7249.23 38718.8 32271.7 38718.8 32271.7L53937 42385.2L59295.2 31169.6L65521.7 42274.2L70640.8 7228.47Z" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M65521.7 42274.2L64479.4 49578.2L53937 42385.2L51681.5 47106.4L58019.5 53276.6L64249.6 50770L64479.4 49578.2L65526.6 50295.8C65526.6 50295.8 69236.9 48998.2 69255.3 48932.9L65521.7 42274.2Z" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M59295.2 31169.6L53937 42385.2L64479.4 49578.2L65521.7 42274.2L59295.2 31169.6Z" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M62420 24887.5L63540.9 28699.8L65260.5 24500.5" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M49407.2 29546.8L47679 31940.4L50777.9 31926.2" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+<path d="M65400.5 47139.7L66554.3 46516.8" fill="#696363" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="300"/>
+</g>
+<g opacity="1">
+<path d="M64677.9 50152.7C64653.2 50138.2 64612.6 50255.4 64605.4 50279.5C64595.2 50313.2 64600.8 50323.5 64616.5 50327.1C64653.5 50335.6 64698.4 50284.3 64709.5 50255.7C64712.1 50249 64723.6 50217.3 64720 50210.9C64717.7 50206.8 64713.8 50234.4 64711.3 50244.2C64701.4 50283.2 64703.6 50300.2 64707.8 50301.1C64717.9 50303.3 64731.3 50292.4 64740.9 50271.3C64751.6 50248 64757.8 50216.8 64758.2 50217.2C64761 50220.6 64751.9 50268 64760.4 50267.5C64781.7 50266.2 64810.8 50162.5 64814.7 50139.2C64816.2 50130.2 64820.9 50100 64811.7 50094.5C64802.5 50089.1 64767.4 50160.1 64781.4 50178.9C64791.1 50192 64851.8 50146 64844.2 50174.9C64836 50206.3 64759.1 50258.5 64767.2 50293.5C64768.1 50297.5 64772.4 50295.4 64774.1 50294C64782 50287.5 64835 50233.3 64835 50230.8C64835 50230.8 64827.4 50236.4 64826.6 50237.1C64821.6 50241.4 64789.5 50274.9 64779.5 50288.6C64778.9 50289.3 64766.4 50310.7 64768.7 50309.3" fill="none" fill-rule="evenodd" opacity="1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.7193"/>
+<path d="M64889.8 50164.9C64889.1 50163.1 64897.7 50151.2 64893.3 50149.1C64884.6 50145 64834 50248.1 64854.2 50255.6C64873.1 50262.7 64944.3 50148.4 64936.6 50122.5C64933.1 50110.7 64908.2 50132.7 64908.2 50140.6" fill="none" fill-rule="evenodd" opacity="1" stroke="#2b2424" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.7193"/>
+</g>
+</g>
+</svg>
