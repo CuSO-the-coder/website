@@ -38,6 +38,8 @@ a {
     text-decoration: none;
     color: unset;
 }
+
+
 /**/
 main{
     margin: 24px;
@@ -68,11 +70,7 @@ p {
     padding: 0 20px;
     line-height: 1.5;
 }
-q {
-    font-style: italic;
-    font-family: 'Courier New';
-    font-size: small;
-}
+
 
 p > a {
     color: navy;
@@ -181,4 +179,96 @@ p > a {
     #favicons-black > span > a > img {
         width: 30px;
     }
+}
+
+/* animazioni*/
+details
+{
+    transition: height 1s ease;
+    overflow: hidden;
+}
+
+details:not([open])
+{
+    height: 1em;
+}
+
+details[open]
+{
+    height: 15em;
+}
+
+/*      ------------------animazioni------------------      */
+
+
+hr:not(.article){
+    animation-name: grow;
+    animation-duration: 1.4s;
+    animation-fill-mode: forwards;
+}
+
+
+article{
+    opacity: 0;
+    animation-name: entrata;
+    animation-duration: 1.4s;
+    animation-fill-mode: forwards;
+}
+
+article :where(h4){
+    opacity: 0;
+    animation-name: pushed;
+    animation-duration: 0.5s;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+}
+article :where(p){
+    opacity: 0;
+    animation-name: pushed;
+    animation-duration: 2.2s;
+    animation-delay: 1.7s;
+    animation-fill-mode: forwards;
+}
+
+
+div.g{
+    opacity: 0;
+    animation-name:sup;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.6s;
+}
+
+
+@keyframes grow{
+    0%{
+        opacity: 0; 
+        width :1%
+    }
+    100%{
+        opacity: 1;
+        width: 94%;;
+    }
+}
+
+@keyframes entrata{
+    0%    {
+        opacity: 0;
+        width: 0%;
+        height: 0%;
+       }
+    100%  {opacity: 1; }
+}
+
+@keyframes pushed{
+    0% {margin-left: -10px;}
+    100%{opacity: 1;}
+}
+@keyframes sup{
+    0% {
+        transform:  translateY(10vh) ;
+    }
+    100%{
+        transform: translateY(0vh);
+        opacity: 1;}
 }
