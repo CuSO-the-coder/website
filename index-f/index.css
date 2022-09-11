@@ -100,7 +100,7 @@ article {
     background-size: cover;
     top: 0;
     left: 0;
-    background: #2b2f33;
+    background: #0000005f; 
     backface-visibility: hidden;
     transform: rotateY(0deg);
     transition: 0.5s;
@@ -113,7 +113,7 @@ article {
     height: 100%;
     top: 0;
     left: 0;
-    background: #2b2f33;
+    background: #0000005f;;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     transition: 0.5s;
@@ -170,7 +170,7 @@ h3.more {
     padding: 4px;
     border-radius: 8px;
     float: right;    
-    background: #2b2f33; 
+    background: #0000005f; 
     color: #ffffffff;
 }
 h3.more:hover{
@@ -299,8 +299,6 @@ q {
     p.d {
         margin:0 15px;
         text-align: center; 
-        overflow: scroll;
-
     }
     a.i {
         float: none;

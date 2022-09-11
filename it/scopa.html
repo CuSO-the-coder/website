@@ -5,10 +5,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Come ho programmato un'intera partita a scopa in python">
+        <meta
+            name="description"
+            content="Come ho programmato un'intera partita a scopa in python">
         <title>Scopa? | CuSO's Place</title>
         <link rel="shortcut icon" href="/@/favicon.png" type="image/x-icon">
-        <link rel="stylesheet" href="0-Template-f/Template.css">
+        <link rel="stylesheet" href="scopa-f/scopa.css">
     </head>
 
     <body>
@@ -28,20 +30,20 @@
         <br>
         <div class="title">
             <h3 class="title">
-                Scopatina?
+                Scopa?
             </h3>
             <h3 class="subtitle">
                 - in python ovviamente -
             </h3>
             <div class="info">
                 <h4>
-                    <em>04/09/2022</em>
+                    <em>xx/09/2022</em>
                 </h4>
-            
+
                 <h4>
                     min
                 </h4>
-            
+
                 <h4 class="cat">
                     <a href="drawer.html#coding">
                         <em>coding</em>
@@ -53,10 +55,787 @@
         <br><br>
 
         <article>
-            <h4>paragraph title</h4>
+            <h4>Intro</h4>
             <p>
-                paragraph
+                Eccomi tornato con un nuovo progetto di coding! 
+                <br>
+                Ma che sbadato, mi ero dimenticato il canonico "buonsalve", lo volevate? Ora è
+                qui :)
+                <br>
+                Non so se lo avete notato, ma ora il sito è animato! Tutto molto carino,
+                animazioni lente che accompagnano la lettura, sono fiero del risultato :))
+                <br>
+                Parlando però del tema del giorno (non la morte della regina d'Inghilterra)
+                fremo dalla voglia di raccontarvi di come ho costruito il codice per questa
+                partita a scopa in python.
             </p>
+            <br>
+            <h4>info generali</h4>
+            <p>
+                Allora, premetto anche che codesta non sarà la versione finale dello script,
+                infatti tramite la programmazione object-oriented riuscirò a scremarlo e
+                renderlo sia più leggibile che leggero.
+                <br>
+                Ma allora perchè non ho utilizzato subito questo tipo di programmazione?
+                <br>
+                Sarò onesto: NON SONO CAPACE
+                <br>
+                O meglio, non credo di esserlo... Conosco le basi ma non sono certo di riuscire
+                a costruire un progetto del genere, quindi mi sono complicato la vita :)
+                <br>
+                Dai, prima o poi escono sia "crucisberla V2" che "Scopa V2 | Obj. Oriented"
+            </p>
+            <br>
+            <section class="disclaimer">
+                <h4>Disclaimer</h4>
+                <p class="article">
+                   Vi ricordo che potete scaricare il codice sorgente  dal mio
+                    <a href="https://github.com/CuSO-the-coder" target="_blank">profilo github</a>
+                </p>
+            </section>
+            <br>
+            <h4>guardiamo il codice</h4>
+            <p>
+                Allora, partiamo? Che qua poi escono articoli da 234min e nessuno me li legge :/
+            </p>
+ 
+            <div class="code">
+                <pre>
+                    <code>
+import os
+import random
+import sys
+import time
+                    </code>
+                 </pre>
+            </div>
+            <p>
+                Qui ho semplicemente importato delle librerie, ma tranquilli, sono più di 500
+                linee di codice. Ci sarà da divertirsi.
+            </p>
+            <br>
+            <h4>Variabili globali</h4>
+            <p>
+                Qui sotto le variabili globali di cui il programma ha bisogno:
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+mazzo=[
+            "1♥", "1♦", "1♣", "1♠",
+            "2♥", "2♦", "2♣", "2♠",
+            "3♥", "3♦", "3♣", "3♠",
+            "4♥", "4♦", "4♣", "4♠",
+            "5♥", "5♦", "5♣", "5♠",
+            "6♥", "6♦", "6♣", "6♠",
+            "7♥", "7♦", "7♣", "7♠",
+            "J♥", "J♦", "J♣", "J♠",
+            "Q♥", "Q♦", "Q♣", "Q♠",
+            "K♥", "K♦", "K♣", "K♠"
+            ]
+        
+
+mazzo_reset=[
+            "1♥", "1♦", "1♣", "1♠",
+            "2♥", "2♦", "2♣", "2♠",
+            "3♥", "3♦", "3♣", "3♠",
+            "4♥", "4♦", "4♣", "4♠",
+            "5♥", "5♦", "5♣", "5♠",
+            "6♥", "6♦", "6♣", "6♠",
+            "7♥", "7♦", "7♣", "7♠",
+            "J♥", "J♦", "J♣", "J♠",
+            "Q♥", "Q♦", "Q♣", "Q♠",
+            "K♥", "K♦", "K♣", "K♠"
+            ]
+        
+
+carte_valori={
+                "1"     :   1,
+                "2"     :   2,
+                "3"     :   3,
+                "4"     :   4,
+                "5"     :   5,
+                "6"     :   6,
+                "7"     :   7,
+                "J"      :   8,
+                "Q"    :    9,
+                "K"     :    10
+}
+
+tavolo, manoplayerone,  manoplayertwo , mazzettoplayerone, mazzettoplayertwo   = []  ,  []  ,  []  ,  []  ,  []
+
+player=1
+
+scopeplayerone,scopeplayertwo=0,0
+
+lastpickup=0
+
+ultimamano=false
+
+nomegiocatore1,nomegiocatore2="",""
+
+finepartita=0
+                    </code>
+                </pre>
+            </div>
+            <p>
+                Le variabili sono abbastanza autoesplicative, sono chiamate con i nomi più
+                leggibili possibile ahaha.
+                <br>
+                Dai, iniziamo a parlare delle funzioni, così entriamo ne vivo el programma
+            </p>
+            <br>
+            <h4>loading()</h4>
+            <p>Come sempre, mi piace dare un tocco di "veridicità" ai miei script, quindi
+                perchè non aggiungere un loading screen di presentazione?</p>
+            <div class="code">
+                <pre>
+                    <code>
+def loading():
+    for i in range(6):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\n")
+        print("caricamento")
+        print("° "*(i+1))
+        time.sleep(0.5)
+    
+    time.sleep(1)
+    
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
+    print("\n\n")
+    print("  ______   ______   ______  _______   ______  \n /      \ /      \ /      \|       \ /      \ \n|  ▓▓▓▓▓▓\  ▓▓▓▓▓▓\  ▓▓▓▓▓▓\ ▓▓▓▓▓▓▓\  ▓▓▓▓▓▓\ \n| ▓▓___\▓▓ ▓▓   \▓▓ ▓▓  | ▓▓ ▓▓__/ ▓▓ ▓▓__| ▓▓\n \▓▓    \| ▓▓     | ▓▓  | ▓▓ ▓▓    ▓▓ ▓▓    ▓▓\n _\▓▓▓▓▓▓\ ▓▓   __| ▓▓  | ▓▓ ▓▓▓▓▓▓▓| ▓▓▓▓▓▓▓▓\n|  \__| ▓▓ ▓▓__/  \ ▓▓__/ ▓▓ ▓▓     | ▓▓  | ▓▓\n \▓▓    ▓▓\▓▓    ▓▓\▓▓    ▓▓ ▓▓     | ▓▓  | ▓▓\n  \▓▓▓▓▓▓  \▓▓▓▓▓▓  \▓▓▓▓▓▓ \▓▓      \▓▓   \▓▓")
+    print("-------------------")
+    print("╔═══╗    ╔═══╗╔═══╗\n║╔═╗║    ║╔═╗║║╔═╗║\n║║ ╚╝╔╗╔╗║╚══╗║║ ║║\n║║ ╔╗║║║║╚══╗║║║ ║║\n║╚═╝║║╚╝║║╚═╝║║╚═╝║\n╚═══╝╚══╝╚═══╝╚═══╝")
+    print("-------------------")
+    time.sleep(2.4)
+
+    os.system('cls' if os.name == 'nt' else 'clear')
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>reset()</h4>
+            <p>Poichè il gioco di carte "scopa" è basato su un molteplice numero di partite,
+                mi serviva una funzione per sistemare tutto in vitsta della partita successiva.
+                Letteralmente ripulisce i mazzetti dei giocatori, riforma il mazzo e da in
+                output un messaggio di conferma
+            </p>
+            <br>
+            <div class="code">
+                <pre>
+                    <code>
+def reset():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    mazzo=mazzo_reset
+    tavolo, manoplayerone,  manoplayertwo , mazzettoplayerone, mazzettoplayertwo   = []  ,  []  ,  []  ,  []  ,  []
+    scopeplayerone,scopeplayertwo=0,0
+    lastpickup=0
+    ultimamano=false
+    print(f"eseguo il reset: \nmazzo={mazzo};\ntavolo={tavolo}; \nmanoplayerone={manoplayerone};\nmanoplayertwo={manoplayertwo}\nmazzettoplayerone={mazzettoplayerone};\nmazzettoplayertwo={mazzettoplayertwo};\nscopeplayerone={scopeplayerone};\nscopeplayertwo={scopeplayertwo};\nlastpickup={lastpickup};\nultimamano={ultimamano}")
+    time.sleep(1.5)
+    os.system('cls' if os.name == 'nt' else 'clear')                        
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>askBeforeStart()</h4>
+            <p>
+                Altra piccola chicca che mi piace sempre aggiungere: un tocco di ux semplice
+                ma efficace, serve solo a rendere "personali" le partite; potevo semplicemente
+                chiamare g1 e g2 i due concorrenti, ma chiedergli i rispettivi nomi semrava più
+                cortese.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def askbeforestart(nomegiocatore1,nomegiocatore2,finepartita):
+    while nomegiocatore1=="":
+        nomegiocatore1=input("giocatore1, come ti chiami?\n")
+    while nomegiocatore2=="":
+        nomegiocatore2=input("giocatore2, come ti chiami?\n")
+    while finepartita==0:
+        finepartita=int(input("a quanti punti volete che la partita finisca? (solitamente si gioca a 11 o 21 punti)\n"))
+    print(f"ottimo, benvenuti {nomegiocatore1} e {nomegiocatore2}, che vinca il migliore")      
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>tableView()</h4>
+            <p>
+                Questa funzione serve a visualizzare ogni turno il tavolo con al suo interno le carte in gioco.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def tableview():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(f"carte nel mazzo: {len(mazzo)}")
+    print("******"*len(tavolo),end="\n")
+    print()
+    print(" ---- "*len(tavolo))
+    for ele in tavolo:
+        print("|",end=" ")
+        print(ele,end=" |")      
+    print()
+    print(" ---- "*len(tavolo))
+    print()
+    print("******"*len(tavolo))
+    print()
+    print("la tua mano:")
+                </code>
+            </pre>
+            </div>
+            <br>
+            <h4>shuffle()</h4>
+            <p>
+                Letteralmente mischia il mazzo, non saprei che altro aggiungere.
+            </p>
+            <div class="code">
+                <pre><code>
+def shuffle():
+    random.shuffle(mazzo)
+                </code></pre>
+            </div>
+            <br>
+            <h4>start() e distro()</h4>
+            <p>
+                start() serve ad avviare il gioco, richiama shuffle() e distro(), la quale serve per "distribuire" le carte ai giocatori, infine, dispone 4 carte sul tavolo.
+            </p>
+                <div class="code">
+                <pre>
+                    <code>
+def start():
+    shuffle()
+    distro()
+    for _ in range(4):
+        tavolo.append(mazzo[0])
+        del mazzo[0]
+    drop(player)
+                    </code></pre>
+                    <pre>
+                        <code>
+def distro():
+    for i in range (3):
+        manoPlayerOne.append(mazzo[0])
+        del mazzo[0]
+        manoPlayerTwo.append(mazzo[0])
+        del mazzo[0]
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>checkPickUp()</h4>
+            <p>
+                Quetsa funzione è essenziale per lo sviluppo del gioco, infatti serve per controllare in serie le possibilità di cattura: inizia con "carta a carta", per poi passare alle somme, prima a d, poi a tre ed infine a 4 carte.
+                <br>
+                Un tratto interessante è che ho dovuto utilizzare un dizionario per inserire il valore e rendere leggibili le carte, quel dizionario "carte_valori" serve appunto per definire il valore alle figure, che sono state chiamate rispettivamente "J", "Q" e "K"; tutto per rendere più fruibile la lettura delle carte durante la partita
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def checkPickUp(player,carta):
+    if len(tavolo)>=1:
+        for j in range(len(tavolo)):
+            cartaDaControllare=tavolo[j]
+            val_cartaDaControllare=carte_valori[cartaDaControllare[0]]
+            val_cartaGiocatore=carte_valori[carta[0]]
+            if val_cartaGiocatore==val_cartaDaControllare:
+                if player==1:
+                    print(f"il giocatore {player} ha preso {cartaDaControllare} con {carta}")
+                    mazzettoPlayerOne.append(carta)
+                    mazzettoPlayerOne.append(cartaDaControllare)
+                    tavolo.remove(cartaDaControllare)
+                    lastPickup=1
+                    turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+                else:
+                    print(f"il giocatore {player} ha preso {cartaDaControllare} con {carta}")
+                    mazzettoPlayerTwo.append(carta)
+                    mazzettoPlayerTwo.append(cartaDaControllare)
+                    tavolo.remove(cartaDaControllare)
+                    lastPickup=2
+                    turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+#------------------------
+    if len(tavolo)>=2:
+        for j in range(len(tavolo)-1):
+            cartaDaControllare=tavolo[j]
+            val_cartaDaControllare=carte_valori[cartaDaControllare[0]]
+            val_cartaGiocatore=carte_valori[carta[0]]
+            for t in range(j+1, len(tavolo)):
+                cartaDaControllare2=tavolo[t]
+                val_cartaDaControllare2=carte_valori[cartaDaControllare2[0]]
+            if val_cartaGiocatore==(val_cartaDaControllare+val_cartaDaControllare2):
+                    if player==1:
+                        print(f"il giocatore {player} ha preso {cartaDaControllare} e {cartaDaControllare2} con {carta}")
+                        mazzettoPlayerOne.append(carta)
+                        mazzettoPlayerOne.append(cartaDaControllare)
+                        mazzettoPlayerOne.append(cartaDaControllare2)                           
+                        tavolo.remove(cartaDaControllare)
+                        tavolo.remove(cartaDaControllare2)
+                        lastPickup=1
+                        turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+                    else:
+                        print(f"il giocatore {player} ha preso {cartaDaControllare} e {cartaDaControllare2} con {carta}")
+                        mazzettoPlayerTwo.append(carta)
+                        mazzettoPlayerTwo.append(cartaDaControllare)
+                        mazzettoPlayerTwo.append(cartaDaControllare2)                           
+                        tavolo.remove(cartaDaControllare)
+                        tavolo.remove(cartaDaControllare2)
+                        lastPickup=2
+                        turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+#-----------------------    
+    if len(tavolo)>=3:
+        for j in range(len(tavolo)-2):
+            cartaDaControllare=tavolo[j]
+            val_cartaDaControllare=carte_valori[cartaDaControllare[0]]
+            val_cartaGiocatore=carte_valori[carta[0]]
+            for t in range(j+1, len(tavolo)-1):
+                cartaDaControllare2=tavolo[t]
+                val_cartaDaControllare2=carte_valori[cartaDaControllare2[0]]
+                for i in range (t+1, len(tavolo)):
+                    cartaDaControllare3=tavolo[i]
+                    val_cartaDaControllare3=carte_valori[cartaDaControllare3[0]]
+                if val_cartaGiocatore==(val_cartaDaControllare+val_cartaDaControllare2+val_cartaDaControllare3):
+                        if player==1:
+                            print(f"il giocatore {player} ha preso {cartaDaControllare} e {cartaDaControllare2} e {cartaDaControllare3} con {carta}")
+                            mazzettoPlayerOne.append(carta)
+                            mazzettoPlayerOne.append(cartaDaControllare)
+                            mazzettoPlayerOne.append(cartaDaControllare2)    
+                            mazzettoPlayerOne.append(cartaDaControllare3)                         
+                            tavolo.remove(cartaDaControllare)
+                            tavolo.remove(cartaDaControllare2)
+                            tavolo.remove(cartaDaControllare3)
+                            lastPickup=1
+                            turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+                        else:
+                            print(f"il giocatore {player} ha preso {cartaDaControllare} e {cartaDaControllare2} e {cartaDaControllare3} con {carta}")
+                            mazzettoPlayerTwo.append(carta)
+                            mazzettoPlayerTwo.append(cartaDaControllare)
+                            mazzettoPlayerTwo.append(cartaDaControllare2)                           
+                            mazzettoPlayerTwo.append(cartaDaControllare3)                           
+                            tavolo.remove(cartaDaControllare)
+                            tavolo.remove(cartaDaControllare2)
+                            tavolo.remove(cartaDaControllare3)
+                            lastPickup=2
+                            turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+#-----------------------   
+    if len(tavolo)>=4:
+        for j in range(len(tavolo)-3):
+            cartaDaControllare=tavolo[j]
+            val_cartaDaControllare=carte_valori[cartaDaControllare[0]]
+            val_cartaGiocatore=carte_valori[carta[0]]
+            for t in range(j+1, len(tavolo)-2):
+                cartaDaControllare2=tavolo[t]
+                val_cartaDaControllare2=carte_valori[cartaDaControllare2[0]]
+                for i in range (t+1, len(tavolo)-1):
+                    cartaDaControllare3=tavolo[i]
+                    val_cartaDaControllare3=carte_valori[cartaDaControllare3[0]]
+                    for w in range(i+1, len(tavolo)):
+                        cartaDaControllare4=tavolo[w]
+                        val_cartaDaControllare4=carte_valori[cartaDaControllare4[0]]
+                        if val_cartaGiocatore==(val_cartaDaControllare+val_cartaDaControllare2+val_cartaDaControllare3+val_cartaDaControllare4):
+                                if player==1:
+                                    print(f"il giocatore {player} ha preso {cartaDaControllare} e {cartaDaControllare2} e {cartaDaControllare3} e {cartaDaControllare4} con {carta}")
+                                    mazzettoPlayerOne.append(carta)
+                                    mazzettoPlayerOne.append(cartaDaControllare)
+                                    mazzettoPlayerOne.append(cartaDaControllare2)    
+                                    mazzettoPlayerOne.append(cartaDaControllare3)                         
+                                    mazzettoPlayerOne.append(cartaDaControllare4)                         
+                                    tavolo.remove(cartaDaControllare)
+                                    tavolo.remove(cartaDaControllare2)
+                                    tavolo.remove(cartaDaControllare3)
+                                    tavolo.remove(cartaDaControllare4)
+                                    lastPickup=1
+                                    turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+                                else:
+                                    print(f"il giocatore {player} ha preso {cartaDaControllare} e {cartaDaControllare2} e {cartaDaControllare3} e {cartaDaControllare4} con {carta}")
+                                    mazzettoPlayerTwo.append(carta)
+                                    mazzettoPlayerTwo.append(cartaDaControllare)
+                                    mazzettoPlayerTwo.append(cartaDaControllare2)                           
+                                    mazzettoPlayerTwo.append(cartaDaControllare3)                           
+                                    mazzettoPlayerTwo.append(cartaDaControllare4)                           
+                                    tavolo.remove(cartaDaControllare)
+                                    tavolo.remove(cartaDaControllare2)
+                                    tavolo.remove(cartaDaControllare3)
+                                    tavolo.remove(cartaDaControllare4)
+                                    lastPickup=2
+                                    turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+    tavolo.append(carta)
+    turnSwap(player,carta,ultimamano,scopePlayerOne,scopePlayerTwo)
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>lastChance()</h4>
+            <p>
+                Avete presente quando voi arrivate all'ultima mano e dovete "prendere tutte le carte rimaste"? Bene, questa funzione serve solo per quello, controlla chi sia stato l'ultimo a prendere e trasferisce le carte restanti nel suo mazzo.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def lastChance(tavolo):
+    if lastPickup==1:
+        for ele in tavolo:
+            mazzettoPlayerOne.append(ele)
+        print(f"essendo l'ultima mano, il giocatore 1 prende {tavolo}")
+        tavolo=[]
+    else:
+        for ele in tavolo:
+            mazzettoPlayerTwo.append(ele)
+        print(f"essendo l'ultima mano, il giocatore 2 prende {tavolo}")
+        tavolo=[]
+    scoreCheck()
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>turnSwap()</h4>
+            <p>
+                Fosse così semplice "passare il turno" all'altro giocatore non avrei creato questa funzione... In realtà non è nulla di speciale, semplicemente mette un indicatore per definire a chi tocca, e permette al resto del programma di decidere quali mani visualizzare e a chi assegnare le carte prese durante quel turno. 
+                <br>
+                Piccolo dettaglio che forse non avrete notato: questa funzione richiama anche "scoreCheck()", la funzione per il conteggio finale dei punti... Ma di lei parleremo più tardi.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def turnSwap(player, carta, ultimamano,scopePlayerOne,scopePlayerTwo):
+    if len(mazzo)==0 and len(manoPlayerOne)==0:
+        ultimamano=True
+    if len(tavolo)==0 and ultimamano==False:
+        print(f"il giocatore {player} ha fatto scopa con {carta}")
+        if player==1:
+            scopePlayerOne+=1
+        else:
+            scopePlayerTwo+=1
+    if player==1:
+        player=2
+    else:
+        player=1
+    if len(manoPlayerTwo)==0 and len(mazzo)>=6:
+        distro()
+    if len(manoPlayerTwo)==0 and ultimamano==True:
+        lastChance(tavolo)
+    #time.sleep(1.3)
+    drop(player)
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>drop()</h4>
+            <p>
+                Aspettate! Ho mostrato tutte le funzioni "conseguenziali" al turno dei giocatori, ma come fare per "giocare"? Bene, ecco a voi la funzione "drop()". 
+                <br>
+                Essa avrà lo scopo di far scegliere al giocatore che carte "droppare" sul tavolo, poi richiamerà "checkPickUp()" per controllare se vi siano delle catture.
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def drop(player):
+    tableView()
+    inp=0
+    if player==1:
+        print(manoPlayerOne,end="\n\n")
+    else:
+        print(manoPlayerTwo,end="\n\n")
+    while not 1<=inp<=len(manoPlayerTwo) and inp!=" ":
+        inp=int(input(f"Giocatore {player} che carta vuoi giocare?"))
+    if player==1:
+        carta=manoPlayerOne[inp-1]
+        del manoPlayerOne[inp-1]
+        checkPickUp(player,carta)
+    else:
+        carta=manoPlayerTwo[inp-1]
+        del manoPlayerTwo[inp-1]
+        checkPickUp(player,carta)
+                    </code>
+                </pre>
+            </div>
+            <br>
+            <h4>carte(), ori(), settebello() e primiera()</h4>
+            <p>
+                Queste sono le 4 principali fuzioni di conteggio punti, verranno richiamate dalla funzione "scoreCheck()" che ho annunciato poc'anzi. 
+                <br>
+                Credo che la loro funzione sia abbastanza autoesplicativa, letteralmente controllano chi abbia ottenuto il punto secondo determinati conteggi: chi ha più carte, chi ha più "ori", chi ha il "settebello" e chi ha la "primiera"
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def carte():
+    if len(mazzettoPlayerOne) >20:
+        return(1)
+    elif len(mazzettoPlayerOne)==20:
+        return("patta")
+    else:
+        return(2)
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+def ori():
+    ori=0
+    for ele in mazzettoPlayerOne:
+        if ele[1]=="♦":
+            ori+=1
+    if ori>5:
+        return(1)
+    elif ori==5:
+        return("patta")
+    else:
+        return(2)
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+ def settebello():
+    if "7♦" in mazzettoPlayerOne:
+        return(1)
+    else:
+        return(2)
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+def primiera():
+    q, p, c, f=False , False, False, False 
+    puntiPrimiera1=0
+    puntiPrimiera2=0 
+    for ele in mazzettoPlayerOne:
+        if ele[0]=="7":
+            if ele[1]=="♦" and q==False:
+                q=True
+                puntiPrimiera1+=21
+            if ele[1]=="♠" and p==False:
+                p=True
+                puntiPrimiera1+=21
+            if ele[1]=="♥" and c==False:
+                c=True
+                puntiPrimiera1+=21
+            if ele[1]=="♣" and f==False:
+                c=True
+                puntiPrimiera1+=21
+    if puntiPrimiera1 < 70:
+        for ele in mazzettoPlayerOne:
+            if ele[0]=="6":
+                if ele[1]=="♦" and q==False:
+                    q=True
+                    puntiPrimiera1+=18
+                if ele[1]=="♠" and p==False:
+                    p=True
+                    puntiPrimiera1+=18
+                if ele[1]=="♥" and c==False:
+                    c=True
+                    puntiPrimiera1+=18
+                if ele[1]=="♣" and f==False:
+                    c=True
+                    puntiPrimiera1+=18
+    if puntiPrimiera1 < 70:
+        for ele in mazzettoPlayerOne:
+            if ele[0]=="1":
+                if ele[1]=="♦" and q==False:
+                    q=True
+                    puntiPrimiera1+=16
+                if ele[1]=="♠" and p==False:
+                    p=True
+                    puntiPrimiera1+=16
+                if ele[1]=="♥" and c==False:
+                    c=True
+                    puntiPrimiera1+=16
+                if ele[1]=="♣" and f==False:
+                    c=True
+                    puntiPrimiera1+=16
+    
+    q, p, c, f=False , False, False, False 
+    for ele in mazzettoPlayerTwo:
+        if ele[0]=="7":
+            if ele[1]=="♦" and q==False:
+                q=True
+                puntiPrimiera2+=21
+            if ele[1]=="♠" and p==False:
+                p=True
+                puntiPrimiera2+=21
+            if ele[1]=="♥" and c==False:
+                c=True
+                puntiPrimiera2+=21
+            if ele[1]=="♣" and f==False:
+                c=True
+                puntiPrimiera2+=21
+    if puntiPrimiera2 < 70:
+        for ele in mazzettoPlayerTwo:
+            if ele[0]=="6":
+                if ele[1]=="♦" and q==False:
+                    q=True
+                    puntiPrimiera2+=18
+                if ele[1]=="♠" and p==False:
+                    p=True
+                    puntiPrimiera2+=18
+                if ele[1]=="♥" and c==False:
+                    c=True
+                    puntiPrimiera2+=18
+                if ele[1]=="♣" and f==False:
+                    c=True
+                    puntiPrimiera2+=18
+    if puntiPrimiera2 < 70:
+        for ele in mazzettoPlayerOne:
+            if ele[0]=="1":
+                if ele[1]=="♦" and q==False:
+                    q=True
+                    puntiPrimiera2+=16
+                if ele[1]=="♠" and p==False:
+                    p=True
+                    puntiPrimiera2+=16
+                if ele[1]=="♥" and c==False:
+                    c=True
+                    puntiPrimiera2+=16
+                if ele[1]=="♣" and f==False:
+                    c=True
+                    puntiPrimiera2+=16
+    
+    if puntiPrimiera1>puntiPrimiera2:
+        return(1)
+    elif puntiPrimiera1 < puntiPrimiera2:
+        return(2)
+    else:
+        return("patta")
+                    </code>
+                </pre>
+
+
+
+
+
+            </div>
+            <br>
+            <h4>scoreCheck()</h4>
+            <p>
+                Ora che abbiamo visto come conta i punti il mio script, addentriamoci nella funzione dedita al salvataggio degli stessi: "scoreCheck()"
+                <br>
+                Questa serve per salvare i dati in un file di cache e mostrarli ai giocatori che potranno decidere di giocare un'altra partita trsamite la funzione "replay()" ed accumulare i suddetti punti, oppure eliminarli tramite la funzione "destroy()" e ricominciare da zero una nuova avventura.
+                <br>
+                Come prevedibile, "destroy()"" "ripulirà" il file dei punti, in questo caso basta aprirlo in "sovracrittura" e richiuderlo lasciandolo vuoto.
+                <br>
+                D'altro canto, "replay() "resetta il mazzo ed il gioco tramite a funzione "reset()", già spiegata prima, infine avvia il gioco con "start()"
+            </p>
+            <div class="code">
+                <pre>
+                    <code>
+def scoreCheck():
+os.system('cls' if os.name == 'nt' else 'clear')
+f=open("cache.txt", "r")
+l=f.readlines()
+if len(l)==4:
+    puntiTotPlayerOne=int(l[1])
+    puntiTotPlayerTwo=int(l[3])
+else:
+    puntiTotPlayerOne=0
+    puntiTotPlayerTwo=0
+
+puntoCarte=carte()
+puntoOri=ori()
+puntoSettebello=settebello()
+puntoPrimiera=primiera()
+
+punteggi=[puntoCarte, puntoOri, puntoSettebello, puntoSettebello]
+
+for ele in punteggi:
+    if ele==1:
+        puntiTotPlayerOne+=1
+    elif ele==2:
+        puntiTotPlayerTwo+=1
+
+puntiTotPlayerOne+=scopePlayerOne
+puntiTotPlayerTwo+=scopePlayerTwo
+
+
+print(f"Ecco i risultati della partita:")
+print(f"Carte\t{puntoCarte}")
+print(f"Ori\t{puntoOri}")
+print(f"Settebello\t{puntoSettebello}")
+print(f"Primiera\t{puntoPrimiera}")
+print(f"Scope giocatore1\t{scopePlayerOne}")
+print(f"Scope giocatore2\t{scopePlayerTwo}")
+f.close()
+f=open("cache.txt","w")
+f.write("Punti giocatore1:\n")
+f.write(str(puntiTotPlayerOne)+"\n")
+
+f.write("Punti giocatore2:\n")
+f.write(str(puntiTotPlayerTwo)+"\n")
+
+f.close()
+f=open("cache.txt", "r")
+l=f.readlines()
+puntiPartitaP1=l[1]
+puntiPartitaP2=l[3]
+if puntiPartitaP1 or puntiPartitaP2>=finePartita:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    if puntiPartitaP1>puntiPartitaP2:
+        print(f"Complimenti {nomeGiocatore1}, hai vinto contro {nomeGiocatore2} con un totale di {puntiPartitaP1} a {puntiPartitaP2}!")
+        sys.exit()
+else:
+    print(f"Il vostro punteggio è di {puntiPartitaP1} a {puntiPartitaP2} per {nomeGiocatore1}")
+    risp=""
+    while risp !="sì" or risp!="no" or risp!="si":
+        risp=input("Volete continuare a giocare?\n")
+        risp=risp.lower()
+    if risp=="sì" or risp=="si":
+        print("Ottimo!")
+        replay()
+    elif risp=="no":
+        print("Va bene, allora dite addio ai vostri progressi :) ")
+        destroy()       
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+def destroy():
+    f=open("cache.txt", "w")
+    f.close()
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+def replay():
+    reset()
+    start()
+                    </code>
+                </pre>
+            </div>
+           <br>
+           <h4>main()</h4>
+           <p>
+            Eccoci alla fine del programma, ormai la funzione madre può essere chiara per tutti.
+            <br>
+            Nel nostro caso "main()" richiama: "loading()", "askBeforeStart()" ed infine "start()". Nulla di più semplice.
+           </p>
+           <div class="code">
+            <pre>
+                <code>
+def main():
+    loading()
+    askBeforeStart(nomeGiocatore1,nomeGiocatore2,finePartita)
+    start()
+                </code>
+            </pre>
+           </div>
+           <br>
+           <h4>Il prigramma finito</h4>
+           <p>
+            Ormai lo sapete, mi piace inserire il canonico <em>if __name__ == "__main__": </em> ed ecco qui il risultato:
+           </p>
+           <div class="code">
+            <pre>
+                <code>
+if __name__ == "__main__":
+    main()
+                </code>
+            </pre>
+           </div>
+           <br>
+           <h4>Conclusioni</h4>
+           <p>
+            Eccoci alla fine di questo interminabile articolo, che ne pensate? Vi ricordo che se volete potete scaricare il codice sorgente da <a href="https://github.com/CuSO-the-coder" target="_blank">profilo github</a>, lì sarà sempre aggirnato e vi caricherò anche la V2 Obj. Oriented che citai ad inizio articolo.
+
+           </p>
             <hr class="article">
             <div class="g">
                 <p>

@@ -58,7 +58,7 @@ main{
     padding: 20px;
     margin: auto;
     margin-bottom: 50px;
-
+    background-color: #b4b4b41f;
 }
 summary{
     text-transform: uppercase;
@@ -66,6 +66,7 @@ summary{
     font-weight:900;
     font-style: italic;
 }
+
 p {
     padding: 0 20px;
     line-height: 1.5;
@@ -130,6 +131,10 @@ p > a {
         color: white;
     }
 
+.cate{
+    background-color: #0000005f;
+}
+
     #favicons-black {
         display: none ;
     }
@@ -190,11 +195,11 @@ details
 
 details:not([open])
 {
-    height: 1em;
+    height: 20px;
 }
 
 details[open]
 {
-    height: 15em;
+    height: 300px;;
 }
 
