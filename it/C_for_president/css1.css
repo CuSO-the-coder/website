@@ -1,0 +1,195 @@
+/* Titolo*/
+#Title {
+    margin-left: 24pt;    
+}    
+
+/*Titolo*/
+    a.title {
+        color: white;
+        font-size: 36pt; 
+        text-decoration: none;
+    }
+
+    a.title:hover {
+        color: wheat;
+    }
+
+/*sottotitolo*/
+
+    h4.Subtitle {
+        margin-top: 0pt;
+        font-size: 16pt;
+        color: white;
+    }
+
+
+#atitle {
+    align-content: center;
+    text-align: center;
+    color: orange;
+    font-family: comic sans ms;
+    font-size: 3.6vw; 
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#text {
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 23pt;
+    font-family: Geneva;
+    color:palegoldenrod;
+
+}
+
+h2 {
+    font-family: comic sans ms;
+    color: orange;
+    text-align: center;
+}
+
+h3 {
+    font-family:Comic sans Ms;
+    color:orange;
+    font-size: 40pt;
+    text-align: center;
+    margin-bottom: 0px;
+}
+h3.a {
+    font-family:Broadway;
+    color:plum;
+    font-size: 35pt;
+    text-align: center;
+    margin-top: 10px;
+}
+
+hr.t {
+    border: solid darkturquoise 3px;
+    width: 15%;
+    border-radius: 8px;
+}
+a{
+    text-decoration: none;
+    color: palegoldenrod;
+
+}
+a.ud:hover{
+    color: plum;
+}
+h2.a {
+    color: plum;
+    text-align: left;
+}
+#Home {margin-left: 24pt;}
+
+/*link*/
+
+a.hm {
+    color: white;
+    font-size: 24pt; 
+    text-decoration: none;
+}
+
+a.hm:hover {
+    color: wheat;
+}
+
+
+@media only screen and (max-width: 1440px) and (orientation: portrait) {
+    #Title {
+        margin-left: 24pt;    
+    }    
+
+    /*Titolo*/
+        a.title {
+            color: white;
+            font-size: 23pt; 
+            text-decoration: none;
+        }
+
+        a.title:hover {
+            color: wheat;
+        }
+
+    /*sottotitolo*/
+
+        h4.Subtitle {
+            margin-top: 0pt;
+            font-size: 10pt;
+            color: white;
+        }
+
+    #atitle {
+        align-content: center;
+        text-align: center;
+        color: orange;
+        font-family: comic sans ms;
+        font-size: 20pt; 
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    #text {
+        text-align: left;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 13pt;
+        font-family: Geneva;
+        color:palegoldenrod;
+    
+    }
+    
+    h2 {
+        font-family: comic sans ms;
+        color: orange;
+        text-align: center;
+    }
+    
+    h3 {
+        font-family:Comic sans Ms;
+        color:orange;
+        font-size: 18pt;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    h3.a {
+        font-family:Broadway;
+        color:plum;
+        font-size: 19pt;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    hr.t {
+        border: solid darkturquoise 3px;
+        width: 15%;
+        border-radius: 8px;
+    }
+    a{
+        text-decoration: none;
+        color: palegoldenrod;
+    
+    }
+    a.ud:hover{
+        color: plum;
+    }
+    h2.a {
+        color: plum;
+        text-align: left;
+    }
+    #Home {margin-left: 24pt;}
+
+    /*link*/
+
+    a.hm {
+    color: white;
+    font-size: 16pt; 
+    text-decoration: none;
+    }
+
+    a.hm:hover {
+    color: wheat;
+    }
+
+}
