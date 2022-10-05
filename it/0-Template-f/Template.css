@@ -207,14 +207,13 @@ div.g {
     #favicons-black > span > a > img {
         width: 30px;
     }
+
+    /*      ------------------particolari------------------      */
+
+    #particular {
+        font-size: 1.7em;
+    } 
 }
-
-/*      ------------------particolari------------------      */
-
-#particular {
-    font-size: 1.7em;
-} 
-
 
 /*      ------------------animazioni------------------      */
 
