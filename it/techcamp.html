@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it" translate="no">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="una settimana di stage al politecnico di milano, tanti neuroni bruciati...">
+        <title>TechCamp | CuSO's Place</title>
+        <link rel="shortcut icon" href="/@/favicon.webp" type="image/x-icon">
+        <link rel="stylesheet" href="0-Template-f/Template.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="/@/favicon.webp" align="left" width="100px" alt="this is my logo :)">
+            <h1>
+                <a href="/index.html" alt="redirect to homepage">
+                    CuSO's Place
+                </a>
+            </h1>
+            <h2>
+                My ideas and something else
+            </h2>
+        </header>
+        <br>
+        <hr>
+        <br>
+        <div class="title">
+            <h3 class="title">
+                TechCamp
+            </h3>
+            <h3 class="subtitle">
+                - come perdere neuroni -
+            </h3>
+            <div class="info">
+                <h4>
+                    23/10/2022
+                </h4>
+
+                <h4>
+                    min
+                </h4>
+
+                <h4 class="cat">
+                    <a href="drawer.html#MODERN_TECH">
+                        <em>modern tech</em>
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <hr>
+        <br><br>
+
+        <article>
+            <h4>intro</h4>
+            <p>
+                Ben ritrovati! Oggi vi voglio raccontare una storia abbastanza tranquilla,
+                niente ex picchiate a sangue, niente benzina finita rimanendo bloccati sui
+                colli, niente sfoghi di egocentrismo in 3^ media... Solo tante lacrime versate
+                in una settimana al Politecnico di Milano.
+            </p>
+            <br>
+            <h4>"Alternanza scuola lavoro"</h4>
+            <p>
+                Oppure "PCTO" per i più moderni, una sigla che a mio avviso si potrebbe
+                riassumere come "Perdere Costantemente Tempo Obbligatoriamente", sopratutto
+                quando non si fanno stage interessanti e si viene mandati in biblioteca a far le
+                fotocopie (storia vera di alcuni conoscenti).
+                <br>
+                Oggi però evitiamo le critiche sociali, concentriamoci sulla mia esperienza:
+                <br>
+                Come comprenderete dal titolo, ho partecipato ad un campus di tecnologia al
+                Politecnico di Milano. Percorso di una settimana che, oltre ad avermi dato
+                nozioni importanti di cybersecurity ed hacking, ha tagliato gran parte delle ore
+                d'alternanza obbligatorie :)
+                <br>
+                Tutto perfetto direte voi, no?
+                <br>
+                Aspetate e vedrete.
+            </p>
+            <br>
+            <h4>il corso</h4>
+            <p>
+                Il corso era diviso in 2: lezioni teoriche la mattina, prove pratiche il
+                pomeriggio.
+                <br>
+                Essendo un corso di cybersecurity gli "esercizi" erano delle
+                <abbr title="Capture The Flag">CTF</abbr>
+                modalità di competizione che consiste nel trovare una "flag" (che nel nostro
+                caso era una stringa di testo) attaccando determinati sistemi informatici. Si
+                partiva da challenge più semplici per arrivare a quelle via via più difficili o
+                impossibili nel caso di D&D...
+            </p>
+            <p>
+                PS: ora parlerò di challenges non completate, al contrario, quelle che siamo
+                riusciti a finire son tutte nella
+                <a href="https://github.com/Anderaxarex/Techamp-1st-week">repo GitHub di Andre</a>, personaggio mistico che approfondiremo più tardi.
+            </p>
+            <br>
+            <h4>Challenges!</h4>
+            <p>
+                Ho citato D&D, ecco, quella era una sfida di blind injections di sql; inutile
+                dire che dopo ore di insulti alle divinità nessuno di noi sia riuscito a
+                completarla.
+                <br>
+                Per i meno avvezzi: sql è utile per interrogare dei database, "blind injection"
+                significa interrogare un database andando a caso... Quindi sperando di trovare
+                qualcosa inviando delle richieste casuali ad un server. Possiamo riassumerlo
+                come "cercare l'ago nel pagliaio, senza sapere cosa sia un ago, senza mani e
+                senza occhi"; convenite con me che non sia il passatempo preferito di tutti?
+                <br>
+                Eppure ci siamo impegnati per ore, cercando di trovare una logica nei vari
+                database che interrogavamo, ma nulla. Abbiamo dovuto abbandonare le ricerche per
+                mancanza di tempo :/
+                <br>
+                La flag di D&D rimarrà un segreto.
+                <br>
+                Ma quella non fu l'unica challenge non completata... Non completammo nemmeno la
+                decodifica di un cifrario polialfabetico a sestine...
+                <br>
+                In questo caso si trattava di decodificare un testo cifrato, testo senza senso
+                ovviamente, che coneneva la stringa "flag{argomentoDellaFlag}".
+                <br>
+                Certo, decodificare un testo non è così complesso, ci sono dei cifrari (come
+                quello di cesare) che si decodificano a mente, ma un polialfabetico a sestine
+                non proprio.
+                <br>
+                Un cifrario polialfabetico utilizza svariati alfabeti per codificare una
+                stringa, infine, le lettere vengono trasformate in un gruppo univoco formato
+                dalle prime 6 lettere dell'alfabeto.
+                <br>
+                Vi faccio un esempio:
+                <br>
+                utilizziamo la chiave "cuso" come cifratura polialfabetica per codificare la
+                parola "ciao".
+                <br>
+                Il risultato è la parola "<strong>ecsc</strong>", ora creiamo casualmentedeigruppi di lettere da "a" ad "f" e li sostituiamo a quelle che abbiamo.
+                <br>Poniamo i gruppi di lettere siano "abcdef, bcdefa, cdefab", per le lettere
+                    "e,c,s" (nonostante che nella realta questi gruppi siano generati casualmente e
+                    siano ben più complicati di questi).
+                <br>Il risultato è qualcosa di simile: "<strong>abcdefbcdefacdefabbcdefa</strong>".
+                <br>
+                <strong>ORA SPIEGATEMI COME SIA POSSIBILE CAPIRE CHE STA ROBA SIA UN "CIAO"</strong>.
+                <br>No seriamente, spiegatemelo, come pensate che in un testo di 10000 parole di
+                    questo tipo io possa capire che dietro ci sia tutto sto casino?
+                <br>Spoiler, non l'ho capito, ho chiesto il funzionamento del cifrario a Law
+                    quando il corso era ormai finito...
+            </p>
+            <br>
+            <h4>Lacrime, sudore e dolore</h4>
+            <p>
+                Non crediate che con le challenges completate sia stato più semplice...
+                <br>Certamente c'erano challenges più semplici e meno dispendiose a livello
+                    mentale, lo ammetto, però alcune richiedevano un buon quantitativo di bestemmie
+                    per far funzionare il tutto.
+                <br>Ad esempio "The like".
+                <br>Challenge che consisteva nell'ottenere un like dall'admin di un social
+                    network. Un po' come se Mark Zuckerberg vi mettesse like ad una foto su
+                    instagram.
+                <br>Bene, l'admin era un bot creato da Law che metteva solo dislike a tutti.
+                <br>Il problema era quindi far sì che l'admin mettesse like (cosa che il bot non
+                    sapeva fare), ma che soprattutto lo mettesse al tuo post.
+                <br>Dopo un po' di insulti e magheggi strani con il codice del sito, siamo
+                    giunti alla conclusione che il bot funzionasse tramite degli identificativi dei
+                    pulsanti e prendesse di mira sempre il primo post del sito. La soluzione era
+                    quindi postare una foto e, nella didascalia, costruire un pulsante secondario
+                    con identificativo "unlike" che però inviasse un messaggio di "like" al server.
+                    Inoltre, per essere l'unico post del social bisognava distruggere quelli altrui.
+                    Come? Aprire un commento e distruggere tutto quanto ci sembrava la scelta
+                    migliore.
+                <br>Incredibilmente, tutto "funzionò". Certo, dovemmo farci la guerra per
+                    riuscire a non distruggerci i post a vicenda e lasciare il tempo all'admin di
+                    metterci "dislike". Dopo un po' di intimidazioni e qualche insulto ai familiari
+                    siamo riusciti a definire una "tregua momentanea".
+                <br>(tutto questo perchè condividere la flag era inammissibile, non ci penso
+                    nemmeno a passarti il risultato di ore di insulti e bestemmie)
+            </p>
+            <br>
+            <h4>un po' di cose carine</h4>
+            <p>
+                Nonostante i neuroni bruciati da tutta questa sofferenza, ci sono stati anche
+                tanti momenti felici. Tipo la cerimonia di fine corso, in cui abbiamo capito di
+                esser stato l'unico corso a soffrire e lavorare realmente (cof cof non come
+                quelli di coding che hanno scopiazzato flappy bird dai video degli indiani cof
+                cof).
+                <br>Oppure quando sono riuscito ad avere 3 piadine al prezzo di 1 sfruttando un
+                    errore nei cartelloni pubblicitari del bar del Politecnico.
+                <br>Mai stato più fiero delle mie capacità imprenditoriali.
+                <br>Sono anche fiero delle amicizie che si sono create tra i banchi del Poli,
+                    quel pazzo furioso di Andre ad esempio. Una bestia che conosce python meglio di
+                    quanto io conosca casa mia. Ha anche creato una repo GitHub in cui ci sono le
+                    soluzioni di tutte le challenges.
+                <br>Ecco il
+                <a href="https://github.com/Anderaxarex/Techamp-1st-week">link</a>
+                Dopotutto è anche grazie a questa repo che mi sono avvicinato all'utilizzo di GitHub, pertanto lo ringrazio :)
+            </p>
+            <br>
+            <h4>conclusioni</h4>
+            <p>
+                Bene, ora che avete compreso che ci siano dei corsi estremamente distruttivi per la vostra sanità mentale, scegliete con cura come abbattere il monte ore di PCTO ;)
+            </p>
+            <hr class="article">
+            <div class="g">
+                <p>
+                    Spero che questo articolo sia stato di vostro interesse e di avervi strappato un
+                    sorriso raccontando un pezzetto di me.
+                    <br>
+                    Per ora è tutto, leggi anche
+                    <a href="drawer.html">altri miei articoli:</a>
+                </p>
+            </div>
+        </article>
+        <footer>
+            <div class="firma">
+                <img class="firma-n" src="/@/Firma-n.svg" alt="la mia firma">
+                <img class="firma-b" src="/@/firma-b.svg" alt="la mia firma">
+            </div>
+            <div id="favicons">
+                <div id="favicons-black">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/ig-black.webp"
+                            alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/tiktok-black.webp"
+                            alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img
+                            class="ico"
+                            src="/@/git-black.webp"
+                            alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img
+                            class="ico"
+                            src="/@/o-black.webp"
+                            alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img
+                            class="ico"
+                            src="/@/dsd-black.webp"
+                            alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img
+                            class="ico"
+                            src="/@/don-black.webp"
+                            alt="donation icon, redirect to my  paypal page"></a>
+                    </span>
+                </div>
+
+                <div id="favicons-white">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/ig-white.webp"
+                            alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/tiktok-white.webp"
+                            alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img
+                            class="ico"
+                            src="/@/o-white.webp"
+                            alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img
+                            class="ico"
+                            src="/@/git-white.webp"
+                            alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img
+                            class="ico"
+                            src="/@/dsd-white.webp"
+                            alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img
+                            class="ico"
+                            src="/@/don-white copia.webp"
+                            alt="donation icon, redirect to my paypal page"></a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
