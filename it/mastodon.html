@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#6364FF" >
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#6364FF" >
+        
+        <meta name="twitter:title" content="Mastodon">
+        <meta name="twitter:card" content="Ho provato mastodon per una settimana e me ne sono innamorato, vi spiego il perchè e nel mentre insulto tutti gli altri social network che sanno anche quando respiriamo :)">
+        <meta name="twitter :description" content="In questo articolo vi parlo di mastodon, un social network basato su blockchain e fediversi; niente pubblicità,  niente tracciamento e sopratutto tanta privacy. Ma sarà meglio dei social che abbiamo oggi?">
+        <meta name="twitter:image" content="/0-copertine/2022-11-19.webp">
+
+        <meta property="og:site" content="Cuso's Place">
+        <meta property="og:title" content="Mastodon">
+        <meta property="og: description" content="In questo articolo vi parlo di mastodon, un social network basato su blockchain e fediversi; niente pubblicità,  niente tracciamento e sopratutto tanta privacy. Ma sarà meglio dei social che abbiamo oggi?" >
+        <meta property="og: image" content="/0-copertine/2022-11-19.webp">
+
+        <meta name="apple-mobile-web-app-title" content="Mastodon">
+
+
+        <meta name="description" content="In questo articolo vi parlo di mastodon, un social network basato su blockchain e fediversi; niente pubblicità,  niente tracciamento e sopratutto tanta privacy. Ma sarà meglio dei social che abbiamo oggi?">
+        <meta name="keywords" content="">
+        <meta name="revised" content="19/11/2022">
+        <meta name="topic" content="Analisi di Mastodon, un social network che punta alla privacy ed alla sicurezza degli utenti.">
+        <meta name="summary" content="Ho provato mastodon per una settimana e me ne sono innamorato, vi spiego il perchè e nel mentre insulto tutti gli altri social network che sanno anche quando respiriamo :)">
+
+
+        <title>Mastodon - Cuso's Place</title>        
+
+        <meta >
+
+        <link rel="shortcut icon" href="/@/favicon.webp" type="image/x-icon">
+        <link rel="stylesheet" href="0-Template-f/Template.css">
+      </head>
+
+    <body>
+        <header>
+            <img src="/@/favicon.webp" align="left" width="100px" alt="this is my logo :)">
+            <h1>
+                <a href="/index.html" alt="redirect to homepage">
+                    CuSO's Place
+                </a>
+            </h1>
+            <h2>
+                My ideas and something else
+            </h2>
+        </header>
+        <br>
+        <hr>
+        <br>
+        <div class="title">
+            <h3 class="title">
+                Mastodon
+            </h3>
+            <h3 class="subtitle">
+                - un vero social network -
+            </h3>
+            <div class="info">
+                <h4>
+                    19/11/2022
+                </h4>
+            
+                <h4>
+                    9min
+                </h4>
+            
+                <h4 class="cat">
+                    <a href="drawer.html#MODERN_TECH">
+                        <em>tech</em>
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <hr>
+        <br><br>
+
+        <article>
+          
+            <h4 id="intro">intro</h4>
+
+<p>Buongiorno mondo!
+Oggi vi porto in un mondo completamente nuovo, un mondo pieno di elefenatini azzurri e senza pubblicità.</p>
+
+<p>A cosa mi riferisco? A mastodon, ovviamente.</p>
+
+<h4 id="cosè-mastodon">cosè mastodon</h4>
+
+<p>Potrei riassumere mastodon come “un twitter che ci ha creduto così tanto che non è più twitter”.<br />
+Mi spiego meglio, twitter è l’esempio lampante della libertà espressiva data alle  persone sbagliate; basta aprirlo per leggere (nei tweet consigliati) una valanga di richieste a sfondo sessuale da parte di minorenni, con annesse avances da utenti dall’età compresa tra le 292 e le 40000 ere geologiche.</p>
+
+<p>Converrete con me che, per un utente neofita che ha aperto twitter solo perchè era preinstallato sul telefono comprato al conad, non sia un granchè come benvenuto…<br />
+La cosa che mi fa smattare è che twitter stesso continua a mandarti 329532 doi notifche al giorno per consigliarti proprio questi bellissimi tweet.</p>
+
+<p>Poi vabbè, ora che Elon ha fatto anche tornare Trump mi immagino quali grandi contenuti possa offrirmi questa piattaforma…</p>
+
+<h4 id="lets-switch">let’s switch!</h4>
+
+<p>Bene, ora che vi ho mostrato le cose “brutte(?)” di twitter, parliamo di mastodon :)<br />
+Mastodon è un social <strong>DECENTRALIZZATO</strong> ed <strong>OPEN SOURCE</strong>, quindi non c’è un server unico che comanda tutto, bensì ognuno è libero di creare un suo piccolo server (o meglio, istanza) per poter contribuire alla continua espansione del social network; inoltre, chiunque può leggere il codice sorgente e dimostrare chè non c’è “nulla di nascosto” al suo interno, che bello, mi ero stufato dei social che ti leggono i nomi dei file locali del dispositivo.</p>
+
+<p>Sì tiktok, sto parlando di te, brutto bricconcello, i nomi dei porno che ho sul telefono non ti devono interessare &gt;:(</p>
+
+<p>Io e <a href="https://www.instagram.com/nicheosala">nicheosala</a> abbiamo creato le nostre due istanze, rispettivamente: <a href="https://mastodon.cuso.tk">masodon.cuso.tk</a> e <a href="https://mastodon.nicheosala.xyz">mastodon.nicheosala.xyz</a>, l’hosting lo abbiamo fatto tramite caddy, dato che già lo usiamo per i nostri siti web, tra l’altro nico ha anche fatto una pull request sul github di mastodon per poter inserire il caddyfile utilizzato (visto che nella guide consigliano nginx, ma era troppo sbatti cambiare tutto), che bravo programmatore che è lui; non come me che uso x, x1, x2, x3, …, xn come nomi delle variabili :)</p>
+
+<p>Comunque stavamo parlando di come funziona mastodn e dei nostri server, no?<br />
+Ora vi illustrerò un pochino come poter usare mastodon da neofiti.</p>
+
+<h4 id="mastodon-for-dummies">mastodon for dummies</h4>
+
+<p>Allora fiorellini miei, come ho detto, ci son omigliaia di server in giro per il mondo, iscrivendovi ad uno di essi vedrete tutti i “toot” (<em>invece che tweet, parlando di pachidermi li hanno chiamati “toot”, a me fa ridere sta cosa, quindi ridete anche voi o vi vengo a cercare con una gang di elefanti tandem psichici da guerra</em>) inerenti al tema del server.</p>
+
+<p>Ad esempio, iscrivendovi al server di Bologna.non_mi_ricordo_come_finiva_il_dominio vedrete i post della gente di Bologna (presumibilmente).<br />
+Se voleste tentare un approccio più “twitter style”, vi basta iscrivervi al server mastodon.social, è un server senza un argomento principale quindi troverete un po’ di tutto.</p>
+
+<p>Nel caso vi facesse schifo il server in cui vi siete iscritti, potete benissimo cambiarlo nelle impostazioni del vostro profilo, quindi non vatevi troppe paranoie per scegliere in quale fare il primo accesso, non è mica la scelta dello starter nei giochi pokemon…</p>
+
+<p>Piccolo punto bonus: se vi iscrivete ad un server potete comunque seguire persone iscritte a server differenti e vedere i loro post, quindi l’importanza di questa scelta diminuisce ancor di più.</p>
+
+<h4 id="una-settimana-con-mastodon">una settimana con mastodon</h4>
+
+<p>Ora che avete capito un po’ come funziona sto social, vi racconterò la mia esperienza.</p>
+
+<p><strong>RAGA È UN DIGITAL DETOX ASSURDO</strong></p>
+
+<p>Visto che non ci sono pubblicità, e tantomeno script strani che ti mostrano contenuti a seguito di una profilazione dell’utente (privacy ++), non vieni risucchiato al suo interno per oreeeee.</p>
+
+<p>È un social magnifico, leggi i post di chi ti interessa quando ti arriva una notifica, poi esci perché non c’è nulla che te lo impedisce, ti senti finalmente libero da ogni manipolazione di instagram e tiktok.<br />
+Inoltre, come già detto, <strong>NIENTE PUBBLICITÀ</strong>, che bello, niente ads stupide di giochi mobile programmati da vietnamiti sottopagati, che liberazione!</p>
+
+<p>Fidatevi, entrate in un server mastodon, ne vale la pena.<br />
+È l’unico social che mi abbia mai soddisfatto pienamente, dm, pst pubblici, post privati, post local. C’è letteralmete tutto quello di cui abbiamo bisogno, quindi perché continuare ad usare altri social meno “etici”?</p>
+
+<p>No seriamente, spiegatemelo.</p>
+
+<h4 id="conclusioni">conclusioni</h4>
+
+<p>Come avrete notato, mastodon è divenato il mio nuovo social del cuore, infatti ho deciso che modificherè il css della mia pagina (sì, potete modificarlo se create un vostro server) e renderlo in tema con quella che sarà la versione 3.0 del sito, che uscità con l’anno nuovo.</p>
+
+<p>Non ho voglia di aggiungere la possibilità di iscriversi al <strong>MIO</strong> server perché abbiamo visto tutti com’è finita con <a href="fdbkill.html">꧁ 𝔉𝔲𝔪𝔦 𝔡𝔦 𝔅𝔯𝔞𝔤 ꧂</a> quindi al massimo vi iscrivete al server <a href="https://mastodon.social">mastodon.social</a> e poi iniziate a seguire me e nico, come fanno i bravi bambini ;)</p>
+
+
+
+
+
+
+            <hr class="article">
+            <div class="g" >
+                <p>
+                    Spero che questo articolo sia stato di vostro interesse e di avervi strappato un
+                    sorriso raccontando un pezzetto di me.
+                    <br>
+                    Per ora è tutto, leggi anche
+                    <a href="drawer.html">altri miei articoli:</a>
+                </p>
+            </div>
+        </article>
+        <footer>
+            <div class="firma">
+                <img class="firma-n" src="/@/Firma-n.svg" alt="la mia firma">
+                <img class="firma-b" src="/@/firma-b.svg" alt="la mia firma">
+            </div>
+            <div id="favicons">
+                <div id="favicons-black">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/ig-black.webp"
+                            alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/tiktok-black.webp"
+                            alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img
+                            class="ico"
+                            src="/@/git-black.webp"
+                            alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img
+                            class="ico"
+                            src="/@/o-black.webp"
+                            alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img
+                            class="ico"
+                            src="/@/dsd-black.webp"
+                            alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img
+                            class="ico"
+                            src="/@/don-black.webp"
+                            alt="donation icon, redirect to my  paypal page"></a>
+                    </span>
+                </div>
+
+                <div id="favicons-white">
+                    <span>
+                        <a href="https://www.instagram.com/_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/ig-white.webp"
+                            alt="instagram icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.tiktok.com/@_._cuso_._/" target="_blank"><img
+                            class="ico"
+                            src="/@/tiktok-white.webp"
+                            alt="tiktok icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://opensea.io/__CuSO__" target="_blank"><img
+                            class="ico"
+                            src="/@/o-white.webp"
+                            alt="opensea icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://github.com/CuSO-the-coder" target="_blank"><img
+                            class="ico"
+                            src="/@/git-white.webp"
+                            alt="github icon, redirect to my profile"></a>
+                    </span>
+                    <span>
+                        <a href="https://discord.gg/xMuHPcENeJ" target="_blank"><img
+                            class="ico"
+                            src="/@/dsd-white.webp"
+                            alt="discord icon, redirect to my discord server"></a>
+                    </span>
+                    <span>
+                        <a href="https://www.paypal.com/paypalme/CuSOdonations" target="_blank"><img
+                            class="ico"
+                            src="/@/don-white copia.webp"
+                            alt="donation icon, redirect to my paypal page"></a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
